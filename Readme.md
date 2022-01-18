@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Юрий Рудько](https://up.htmlacademy.ru/htmlcss/33/user/1959291).
-* Наставник: `Неизвестно`.
+* Наставник: `Никита Сигов` (https://htmlacademy.ru/profile/crazer).
 
 ---
 
