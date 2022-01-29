@@ -29,6 +29,7 @@ body {
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
+  font-weight: 400;
   color: #000000;
   background-color: #ffffff;
   min-width: 1240px;
@@ -48,22 +49,29 @@ list-style: none;
 }
 
 .main-index {
-  background-image: url("../images/index-background.jpg");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
+  text-align: center;
 }
 
-.main-index h1 {
+.welcome {
+  background-image: url("../images/index-background_divider.svg"), url("../images/index-background.jpg");
+  background-size: 100% auto, 100% auto;
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, top;
+  /* так лучше видно текст welcome*/
+  min-height: 485px;
+  }
+
+ .advantages-main-title {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
-  text-align: center;
 }
 
-.main-index p {
+.advantages-explanation {
   font-size: 22px;
-  line-height: 36px;
+  line-height: 26px;
+  font-weight: 400;
 }
 
 .advantages-item {
@@ -73,7 +81,6 @@ list-style: none;
 
 .advantages-list {
   list-style: none;
-  text-align: center;
 }
 
 .advantages-title {
@@ -82,19 +89,69 @@ list-style: none;
   line-height: 28px;
   text-transform: uppercase;
 }
-
-.advantages-facts-list {
-  list-style: none;
-}
-
-.advantages-facts-item:nth-child(2n+1) {
+/* цвет текста и фоны для преимуществ */
+.advantages-item {
+  color: #000000;
   background-color: rgba(131, 179, 211, 0.12);
 }
 
-.advantages-facts-title {
+.advantages-item:nth-child(1),
+.advantages-item:nth-child(5)
+{
+  color: #ffffff;
+  background-color: #83B3D3;
+}
+
+.advantages-item:nth-child(3) {
+  background-color: #ffffff;
+}
+
+.advantages-item:nth-child(7) {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+
+.hotel-search {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.hotel-search-title {
+  font-size: 30px;
+  line-height: 36px;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 28px;
   text-transform: uppercase;
 }
 
+.hotel-search-instruction {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.hotel-search-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.subscribe {
+  color: #ffffff;
+  background-color: #000000;
+  background-image: url(../images/subscribe-background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+    /* так лучше видно картинку*/
+    min-height: 411px;
+}
+
+.footer-social-list {
+  list-style: none;
+}
+.footer-contacts {
+  text-align: center;
+}
+
+.footer-contacts-phone {
+  font-size: 40px;
+  line-height: 40px;
+  color: inherit;
+  text-decoration: none;
+}
