@@ -13,6 +13,7 @@
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
+/*
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -25,6 +26,18 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+Кнопка
+
+.button {
+  border: 1px solid black;
+  border-radius: 4px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 15px auto;
+}
+*/
 body {
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
@@ -58,7 +71,7 @@ list-style: none;
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, top;
   /* так лучше видно текст welcome*/
-  min-height: 485px;
+  min-height: 486px;
   }
 
  .advantages-main-title {
@@ -68,46 +81,48 @@ list-style: none;
   text-transform: uppercase;
 }
 
-.advantages-explanation {
-  font-size: 22px;
-  line-height: 26px;
-  font-weight: 400;
-}
-
-.advantages-item {
-  color:#ffffff;
-  background-color: #83B3D3;
-}
-
-.advantages-list {
-  list-style: none;
-}
-
 .advantages-title {
   font-weight: 700;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
 }
-/* цвет текста и фоны для преимуществ */
+
+.advantages-explanation {
+  font-size: 22px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.advantages-list, .advantages-facts-list {
+  list-style: none;
+  background-color:#ffffff;
+  /* padding:0; */
+}
 .advantages-item {
   color: #000000;
+}
+
+.advantages-item:nth-child(2n+1) {
   background-color: rgba(131, 179, 211, 0.12);
 }
-
-.advantages-item:nth-child(1),
-.advantages-item:nth-child(5)
-{
-  color: #ffffff;
-  background-color: #83B3D3;
-}
-
-.advantages-item:nth-child(3) {
-  background-color: #ffffff;
-}
-
-.advantages-item:nth-child(7) {
+.advantages-item:nth-child(2n) {
   background-color: rgba(131, 179, 211, 0.2);
+}
+
+.advantages-list > .with-photo {
+  color: #ffffff;
+  background-color:rgba(131, 179, 211, 1);
+}
+
+.advantages-facts-item:nth-child(2n+1) {
+  color: #000000;
+  background-color:rgba(131, 179, 211, 0.12)
+}
+
+.advantages-facts-item:nth-child(2n) {
+  color: #000000;
+  background-color:#ffffff;
 }
 
 .hotel-search {
@@ -155,3 +170,4 @@ list-style: none;
   color: inherit;
   text-decoration: none;
 }
+
