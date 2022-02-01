@@ -27,8 +27,9 @@
   overflow: hidden;
 }
 */
-
-
+html {
+  background-color:#f2f2f2;
+}
 
 body {
   font-family: "PT Sans", sans-serif;
@@ -37,12 +38,12 @@ body {
   font-weight: 400;
   color: #000000;
   background-color: #ffffff;
-  min-width: 1240px;
+  min-width: 1200px;
   padding: 0 20px;
 }
 
-/* Кнопка
 
+/* Кнопка
 .button {
   border: 1px solid black;
   border-radius: 4px;
@@ -57,7 +58,6 @@ body {
 */
 
 /* все списки без точек */
-
 .navigation-list,
 .advantages-list,
 .advantages-facts-list,
@@ -79,7 +79,7 @@ body {
 .main-index {
   text-align: center;
 }
-
+/* фоны */
 .welcome {
   background-image: url("../images/index-background_divider.svg"), url("../images/index-background.jpg");
   background-size: 100% auto, 100% auto;
@@ -104,11 +104,14 @@ body {
   text-transform: uppercase;
 }
 
-.advantages-explanation,
-.advantages-facts-description {
+.advantages-explanation {
   font-size: 22px;
-  line-height: 26px;
-  font-weight: 400;
+  line-height: 36px;
+ }
+
+.advantages-facts-description {
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .advantages-list,
@@ -119,7 +122,6 @@ body {
 .advantages-item,
 .advantages-facts-item {
   color: #000000;
-
 }
 
 .advantages-item:nth-child(2n+1) {
@@ -130,11 +132,6 @@ body {
   background-color: rgba(131, 179, 211, 0.2);
 }
 
-.advantages-list > .with-photo {
-  color: #ffffff;
-  background-color:rgba(131, 179, 211, 1);
-}
-
 .advantages-facts-item:nth-child(2n+1) {
   background-color:rgba(131, 179, 211, 0.12)
 }
@@ -143,6 +140,11 @@ body {
   background-color:#ffffff;
 }
 
+/* Вопрос */
+.advantages-list > .with-photo {
+  color: #ffffff;
+  background-color:rgba(131, 179, 211, 1);
+}
 .hotel-search {
   text-transform: uppercase;
 }
@@ -172,6 +174,18 @@ body {
   background-size: 100% auto;
     /* так лучше видно картинку*/
     min-height: 411px;
+}
+
+.subscribe-title {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subscribe-description {
+  font-size: 22px;
+  line-height: 26px;
 }
 
 .footer-contacts {
