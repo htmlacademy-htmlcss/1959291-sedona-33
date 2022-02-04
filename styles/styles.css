@@ -13,8 +13,8 @@
   src: url("../fonts/ptsans-700.woff2") format("woff2");
   font-display: swap;
 }
-/*
-.visually-hidden {
+
+/* .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -26,24 +26,6 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-*/
-html {
-  background-color:#f2f2f2;
-}
-
-body {
-  font-family: "PT Sans", sans-serif;
-  font-size: 18px;
-  line-height: 21px;
-  font-weight: 400;
-  color: #000000;
-  background-color: #ffffff;
-  min-width: 1200px;
-  padding: 0 20px;
-}
-
-
-/* Кнопка
 .button {
   border: 1px solid black;
   border-radius: 4px;
@@ -55,17 +37,69 @@ body {
   margin: 5px;
   text-decoration: none;
 }
+
 */
 
-/* все списки без точек */
+html {
+  background-color:#f2f2f2;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  min-width: 1200px;
+  padding: 0 20px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.page-center-container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+/* все списки без стилей */
 .navigation-list,
 .advantages-list,
 .advantages-facts-list,
 .footer-social-list,
 .hotels-list,
 .breadcrumbs,
-.pagination {
+.pagination,
+.breadcrumbs-link,
+.catalog-filter-list {
   list-style: none;
+  margin: 0;
+  padding:0;
+}
+
+.page-header {
+  width: 1060px;
+  margin: 0 auto;
+}
+
+.navigation {
+  display:flex;
+}
+
+.navigation-list {
+  width: 345px;
+}
+
+.navigation-user {
+  width: 264px;
+  margin-left: auto;
 }
 
 .navigation-link {
@@ -79,21 +113,51 @@ body {
 .main-index {
   text-align: center;
 }
-/* фоны */
+
+/* фон главная страница*/
 .welcome {
   background-image: url("../images/index-background_divider.svg"), url("../images/index-background.jpg");
-  background-size: 100% auto, 100% auto;
   background-repeat: no-repeat, no-repeat;
-  background-position: bottom, top;
-  /* так лучше видно текст welcome*/
-  min-height: 485px;
+  background-position: 50% 428px, top;
+  background-color: #c8c8c8;
+  height: 485px;
   }
+
+.advantages-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 282px;
+}
 
  .advantages-main-title {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.advantages-list,
+.advantages-item-with-photo,
+.advantages-facts-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.advantages-item-with-photo:nth-child(2) {
+  flex-flow: row-reverse;
+}
+
+.advantages-item-info,
+.advantages-facts-item,
+.advantages-item {
+  width: 400px;
+  height: 384px;
+  box-sizing: border-box;
+  padding-top: 98px;
 }
 
 .advantages-title,
@@ -109,10 +173,23 @@ body {
   line-height: 36px;
  }
 
-.advantages-facts-description {
+ .advantages-description,
+ .advantages-facts-description {
   font-size: 18px;
   line-height: 21px;
-}
+ }
+
+ /*
+ Пока не выравниваем
+ .advantages-facts-description:nth-child(1) {
+  padding: 0 10px;
+ }
+
+ .advantages-item-with-photo > .advantages-description {
+  width: 220px;
+  padding: 0 10px;
+ }
+*/
 
 .advantages-list,
 .advantages-facts-list {
@@ -140,13 +217,17 @@ body {
   background-color:#ffffff;
 }
 
-/* Вопрос */
-.advantages-list > .with-photo {
+.advantages-item-with-photo {
   color: #ffffff;
   background-color:rgba(131, 179, 211, 1);
 }
+
 .hotel-search {
-  text-transform: uppercase;
+  min-height: 417px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hotel-search-title {
@@ -171,9 +252,11 @@ body {
   background-color: #000000;
   background-image: url(../images/subscribe-background.jpg);
   background-repeat: no-repeat;
-  background-size: 100% auto;
-    /* так лучше видно картинку*/
-    min-height: 411px;
+  min-height: 411px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .subscribe-title {
@@ -188,8 +271,27 @@ body {
   line-height: 26px;
 }
 
+/* Футер */
+
+.page-footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer-social {
+  width: 107px;
+  padding-left: 72px;
+}
+
 .footer-contacts {
+  width: 720px;
   text-align: center;
+  padding-left: 61px;
+}
+
+.footer-logo {
+  width: 115px;
+  padding-right: 72px;
 }
 
 .footer-contacts-phone {
@@ -199,19 +301,22 @@ body {
   text-decoration: none;
 }
 
+/* основные стили страница  каталога */
+
 .hotels-catalog {
 color:#ffffff;
 background-color: #000000;
 background-image: url("../images/catalog-background.jpg");
 background-repeat: no-repeat;
-background-size: 100% auto;
-
 }
 
 .hotels-title {
   font-size: 60px;
   line-height: 77px;
   font-weight: 700;
+}
+.breadcrumbs {
+  display: flex;
 }
 
 .breadcrumbs-link {
@@ -220,14 +325,73 @@ background-size: 100% auto;
   text-decoration: none;
 }
 
+.catalog-filter {
+display: flex;
+}
+
 .catalog-filter-group {
   border: none;
 }
 
+.catalog-filter-group:nth-child(1) {
+  width: 150px;
+  padding-left: 75px;
+}
+
+.catalog-filter-group:nth-child(2) {
+  width: 150px;
+  padding-left: 65px;
+}
+
+.catalog-filter-group:nth-child(3) {
+  width: 287px;
+  padding-left: 167px;
+}
+
+.catalog-filter-group:nth-child(4) {
+  width: 160px;
+  padding-left: 81px;
+}
+
+/* Результаты поиска */
+
+.catalog-hotel-search {
+  width: 1058px;
+  margin: 0 auto;
+}
+
+.sorting {
+  display: flex;
+}
+
 .sorting-results {
+  text-align: center;
+}
+
+
+.sorting-results-heading {
+  display: inline-block;
   font-size: 30px;
   line-height: 39px;
   text-transform: uppercase;
+  width: 350px;
+}
+
+.sorting-control {
+  width: 287px;
+}
+
+.hotels-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin:0;
+  padding:0;
+}
+
+.hotel-card {
+  width: 339px;
+  margin: 10px 10px 10px 0;
+  text-align: center;
 }
 
 .hotel-card-link {
@@ -245,7 +409,20 @@ background-size: 100% auto;
 .hotel-price {
   font-size: 18px;
   line-height: 23px;
+}
 
+.sorting-pagination,
+.pagination {
+  display: flex;
+}
+.pagination-item {
+  width: 55px;
+  margin-right: 8px;
+}
+
+.hotels-on-page {
+  width: 386px;
+  margin-left: 302px;
 }
 
 .pagination-link {
@@ -269,5 +446,6 @@ background-size: 100% auto;
 .subscribe-hotels {
   color: #000000;
   background-color: #ffffff;
+  text-align: center;
 }
 
