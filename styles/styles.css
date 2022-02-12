@@ -91,7 +91,7 @@ body {
   width: 139px;
   margin-right: 30px;
   /* лого накладывается на следующий блок */
-  margin-bottom: -10px;
+  margin-bottom: -5px;
   z-index: 100;
 }
 
@@ -137,7 +137,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, top;
   background-color: #c8c8c8;
-  padding-top: 51px;
+  padding-top: 46 px;
   padding-bottom: 82px;
   /* не знаю почему но параметр высоты строки влияет на размер этого блока, при не нулевой высоте строки
   сам контейнер welcome увеличивается в размерах - почему?
@@ -325,7 +325,7 @@ padding: 0;
 .subscribe {
   color: #ffffff;
   background-color: #000000;
-  background-image: url(../images/subscribe-background.jpg);
+  background-image: url("../images/subscribe-background.jpg");
   background-repeat: no-repeat;
   padding: 94px 240px;
 }
@@ -395,80 +395,129 @@ background-color: #000000;
 background-image: url("../images/catalog-background.jpg");
 background-repeat: no-repeat;
 padding: 0 72px;
+padding-top: 35px;
+padding-bottom: 83px;
 }
 
 .hotels-title {
+  margin: 0;
+  padding:0;
   font-size: 60px;
   line-height: 77px;
   font-weight: 700;
+  margin-bottom: 5px;
 }
+
 .breadcrumbs {
   display: flex;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 45px;
 }
 
 .breadcrumbs-link {
   font-size: 16px;
   color: inherit;
   text-decoration: none;
+  padding-right: 10px;
+}
+
+.breadcrumbs-link:last-child {
+  padding-right: 0;
 }
 
 .catalog-filter {
   display: flex;
-  justify-content: space-between;
 }
 
 .catalog-filter-group {
   border: none;
-
+  margin: 0;
+  padding: 0;
 }
 
-/* .catalog-filter-group:nth-child(1) {
-  width: 150px;
+.catalog-filter-title {
+  margin-bottom: 30px;
+}
+
+.catalog-filter-list {
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-item {
+  margin-bottom: 13px;
+}
+
+.catalog-filter-item:last-child {
+  margin-bottom: 0;
+}
+
+.catalog-filter-group:nth-child(1) {
+  max-width: 150px;
+  margin-right: 67px;
 }
 
 .catalog-filter-group:nth-child(2) {
-  padding-left: 65px;
+  max-width: 160px;
+  margin-right: 167px;
 }
 
 .catalog-filter-group:nth-child(3) {
-  width: 287px;
-  padding-left: 167px;
+  max-width: 287px;
+  margin-right: auto;
 }
 
-.catalog-filter-group:nth-child(4) {
-  width: 160px;
-  padding-left: 81px;
-} */
+.catalog-filter > .button {
+  align-self: center;
+}
 
 /* Результаты поиска */
 
 .catalog-hotel-search {
-  width: 1058px;
-  margin: 0 auto;
+  padding:0 72px;
+  padding-top: 50px;
+  padding-bottom: 73px;
 }
 
 .sorting {
   display: flex;
-  justify-content: space-between;
+  margin-bottom: 53px;
 }
 
-.sorting-results {
-  text-align: center;
-
+.sorting-results{
+  margin-bottom: 34px;
 }
-
 
 .sorting-results-heading {
-  display: inline-flex;
+  margin: 0;
+  padding: 0;
   font-size: 30px;
   line-height: 39px;
   text-transform: uppercase;
+  margin-right: 192px;
 }
 
-/* .sorting-control {
+.sorting-control {
+  width: 287px;
+}
+.sorting-buttons-group {
+  display: flex;
+  margin-left: auto;
+}
 
-} */
+.sorting-buttons-group .button {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
+}
 
+.sorting-buttons-group .button:last-child {
+  margin-right: 0;
+}
+
+/* сами карточки пока не трогаем, они будут на гридах, после следующего лайва */
 .hotels-list {
   display: flex;
   flex-wrap: wrap;
@@ -478,16 +527,23 @@ padding: 0 72px;
 
 .hotel-card {
   width: 340px;
-  margin: 10px 10px 10px 0;
-  text-align: center;
+  box-sizing: border-box;
+  padding: 20px;
 }
 
 .hotel-card-link {
   color: inherit;
   text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.hotel-card-image{
+  margin-bottom: 16px;
 }
 
 .hotel-card-title {
+  margin: 0;
+  padding: 0;
   font-size: 24px;
   line-height: 31px;
   font-weight: 700;
@@ -498,28 +554,48 @@ padding: 0 72px;
   font-size: 18px;
   line-height: 23px;
 }
+.load-more{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
 
-.sorting-pagination,
+.load-more .button{
+  display: block;
+  margin: 0 auto;
+}
+
+.sorting-pagination {
+  display: flex;
+  padding: 0 72px;
+}
+
 .pagination {
   display: flex;
 }
 
 .pagination-item {
-  width: 55px;
   margin-right: 8px;
 }
 
-.hotels-on-page {
-  width: 386px;
-  margin-left: 302px;
+.pagination-item:last-child {
+  margin-right: 0;
 }
 
 .pagination-link {
+  display: block;
+  box-sizing: border-box;
+  width: 55px;
+  height: 55px;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
   color: #ffffff;
   background-color: #000000;
+  text-decoration: none;
+  padding: 15px;
 }
 
 .pagination-current {
@@ -528,6 +604,8 @@ padding: 0 72px;
 }
 
 .hotels-on-page {
+  margin-left: auto;
+  align-self: center;
   font-size: 18px;
   line-height: 23px;
 }
@@ -536,5 +614,17 @@ padding: 0 72px;
   color: #000000;
   background-color: #ffffff;
   text-align: center;
+  padding-bottom: 140px;
 }
 
+.subscribe-title,
+.subscribe-description {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 46px;
+}
+
+.subscribe-form {
+  margin: 0;
+  padding: 0;
+}
