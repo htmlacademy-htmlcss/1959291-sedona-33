@@ -1,0 +1,637 @@
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+ .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background-color: #756257;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+}
+
+html {
+  background-color:#f2f2f2;
+  height: 100%;
+  padding: 0 20px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 1200px;
+  margin: 0 auto;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.page-header {
+  margin: 0;
+  padding: 0 70px;
+}
+
+.navigation {
+  display:flex;
+}
+
+.main-logo {
+  display: flex;
+  align-items: center;
+  width: 139px;
+  margin-right: 30px;
+      /* лого накладывается на следующий блок  */
+  margin-bottom: -5px;
+  z-index: 100;
+}
+
+.navigation-list {
+    /* максимальная ширина и wrap нужны для критерия переполнения,
+  чтобы при добавлении новых пунктов меню не сломалось */
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 450px;
+}
+
+.navigation-link {
+  display: block;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  padding: 20px 17px;
+}
+
+.navigation-user {
+  margin: 0;
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 350px;
+  margin-left: auto;
+  align-items: center;
+}
+
+.navigation-user .navigation-link{
+  min-width: 18px;
+  min-height: 18px;
+}
+
+/* вопрос по кнопке - она является .navigation-link соответственно получает черный цвет и белый фон,
+а определение кнопки находится выше в css значит ее свойства не применяются, что делать? */
+.navigation-user .navigation-link .button{
+  padding: 20px;
+}
+
+.main-index {
+  text-align: center;
+}
+
+/* фон главная страница*/
+.welcome {
+  background-image: url("../images/index-background_divider.svg"), url("../images/index-background.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom, top;
+  background-color: #c8c8c8;
+  padding-top: 51px;
+  padding-bottom: 82px;
+  /* не знаю почему но параметр высоты строки влияет на размер этого блока, при не нулевой высоте строки
+  сам контейнер welcome увеличивается в размерах - почему?
+  мысль - img по умолчанию строчный элемент, видимо к нему и применяется высота строки
+  */
+  line-height: 0;
+  }
+
+.advantages-header {
+  padding: 63px 240px 80px;
+}
+
+.advantages-main-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 31px;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.advantages-explanation {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  line-height: 36px;
+ }
+
+.advantages-list,
+.advantages-item-with-photo,
+.advantages-facts-list {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+  /* при переполнении контента остальные блоки будут растягиваться по высоте,
+  если элементов меньше чем на полный ряд то они располагаются в центре */
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* т.к текст в поле факта может меняться больше размера картинки, он будет определять высоту блока,
+ зададим автоматический отступ сверху и снизу - так можно делать?*/
+.advantages-photo {
+  margin: auto 0;
+}
+
+.advantages-item-with-photo:nth-child(2n) {
+  flex-flow: row-reverse;
+}
+
+.advantages-title,
+.advantages-number,
+.advantages-description,
+.advantages-facts-title,
+.advantages-facts-description {
+margin: 0;
+padding: 0;
+}
+
+.advantages-item-info,
+.advantages-facts-item,
+.advantages-item {
+  width: 400px;
+  /* при отсутствии контента (изображения) размер сохранится */
+  min-height: 384px;
+  box-sizing: border-box;
+}
+
+.advantages-item-info,
+.advantages-item  {
+  padding-top: 98px;
+  /* размер при нормальном наполнении определяется высотой блока,
+если текста слишком много хочу чтобы он не прилипал к краю контейнера */
+  padding-bottom: 10px;
+}
+
+
+.advantages-facts-item {
+  padding: 185px 75px 10px;
+}
+
+.advantages-facts-item .advantages-facts-title {
+  margin-bottom: 20px;
+}
+
+.advantages-title,
+.advantages-facts-title{
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.advantages-number {
+  margin-bottom: 30px;
+}
+
+ .advantages-description,
+ .advantages-facts-description {
+  font-size: 18px;
+  line-height: 21px;
+ }
+
+.advantages-item-info {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+
+.advantages-item {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.advantages-list,
+.advantages-facts-list {
+  background-color:#ffffff;
+}
+
+.advantages-item,
+.advantages-facts-item {
+  color: #000000;
+}
+
+.advantages-item:nth-child(2n+1) {
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+.advantages-item:nth-child(2n) {
+  background-color: rgba(131, 179, 211, 0.2);
+}
+
+.advantages-facts-item:nth-child(2n+1) {
+  background-color:rgba(131, 179, 211, 0.12)
+}
+
+.advantages-facts-item:nth-child(2n) {
+  background-color:#ffffff;
+}
+
+.advantages-item-with-photo {
+  color: #ffffff;
+  background-color:rgba(131, 179, 211, 1);
+}
+
+.hotel-search {
+  padding: 90px 240px 87px;
+}
+
+.hotel-search-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hotel-search-instruction {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 55px;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.hotel-search-link {
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 36px;
+  padding: 15px;
+ }
+
+.subscribe {
+  color: #ffffff;
+  background-color: #000000;
+  background-image: url("../images/subscribe-background.jpg");
+  background-repeat: no-repeat;
+  padding: 92px 200px;
+}
+
+.subscribe-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 30px;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subscribe-description {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 45px;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.subscribe-form {
+  margin: 0;
+  padding: 0;
+}
+.subscribe-form .button {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  padding: 17px;
+}
+
+/* Футер */
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 72px;
+}
+/* для переполнения блока */
+.footer-social {
+  max-width: 150px;
+}
+
+.footer-social-list {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-social-item {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  /* отступ снизу нужен для отступ между элементами при переполнении, когда получается несколько рядов */
+  margin-bottom: 5px;
+}
+
+.footer-social-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.footer-contacts-phone {
+  font-size: 40px;
+  line-height: 40px;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* основные стили страница  каталога */
+
+.hotels-catalog {
+color:#ffffff;
+background-color: #000000;
+background-image: url("../images/catalog-background.jpg");
+background-repeat: no-repeat;
+padding: 35px 72px 90px;
+}
+
+.hotels-title {
+  margin: 0;
+  padding: 0;
+  font-size: 60px;
+  line-height: 78px;
+  font-weight: 700;
+  /* в макете не совсем корректно нарисовано положение текста при высоте строки 78пх,
+  поэтому и отступ в другую сторону, думаю макет поправят */
+  margin-bottom: -7px;
+}
+
+.breadcrumbs {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  margin-bottom: 45px;
+}
+
+.breadcrumbs-link {
+  font-size: 16px;
+  color: inherit;
+  text-decoration: none;
+  padding-right: 10px;
+}
+
+.breadcrumbs-link:last-child {
+  padding-right: 0;
+}
+
+.catalog-filter {
+  display: flex;
+}
+
+.catalog-filter-group {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.catalog-filter-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.catalog-filter-list {
+  list-style: none;
+  margin: 0;
+  padding:0;
+}
+
+.catalog-filter-item {
+  margin-bottom: 13px;
+}
+
+.catalog-filter-item:last-child {
+  margin-bottom: 0;
+}
+
+.catalog-filter-group:nth-child(1) {
+  max-width: 150px;
+  margin-right: 67px;
+}
+
+.catalog-filter-group:nth-child(2) {
+  max-width: 160px;
+  margin-right: 167px;
+}
+
+.catalog-filter-group:nth-child(3) {
+  max-width: 287px;
+  margin-right: auto;
+}
+
+.catalog-filter > .button {
+  align-self: center;
+}
+
+/* Результаты поиска */
+
+.catalog-hotel-search {
+  padding:0 72px;
+  padding-top: 50px;
+  padding-bottom: 73px;
+}
+
+.sorting {
+  display: flex;
+  margin-bottom: 53px;
+}
+
+.sorting-results{
+  margin-bottom: 34px;
+}
+
+.sorting-results-heading {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+  line-height: 39px;
+  text-transform: uppercase;
+  margin-right: 192px;
+}
+
+.sorting-control {
+  width: 287px;
+}
+
+.sorting-buttons-group {
+  display: flex;
+  margin-left: auto;
+}
+
+.sorting-buttons-group .button {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-right: 8px;
+}
+
+.sorting-buttons-group .button:last-child {
+  margin-right: 0;
+}
+
+/* сами карточки пока не трогаем, они будут на greeds, после следующего live */
+.hotels-list {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hotel-card {
+  width: 340px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.hotel-card-link {
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.hotel-card-image{
+  margin-bottom: 16px;
+}
+
+.hotel-card-title {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  line-height: 31px;
+  font-weight: 700;
+}
+
+.hotel-type,
+.hotel-price {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.load-more{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.load-more .button{
+  display: block;
+  margin: 0 auto;
+}
+
+.sorting-pagination {
+  display: flex;
+  padding: 0 72px;
+}
+
+.pagination {
+  list-style: none;
+  margin: 0;
+  padding:0;
+  display: flex;
+}
+
+.pagination-item {
+  margin-right: 8px;
+}
+
+.pagination-item:last-child {
+  margin-right: 0;
+}
+
+.pagination-link {
+  display: block;
+  box-sizing: border-box;
+  width: 55px;
+  height: 55px;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #000000;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.pagination-current {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.hotels-on-page {
+  margin-left: auto;
+  align-self: center;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.subscribe-hotels {
+  color: #000000;
+  background-color: #ffffff;
+  text-align: center;
+  padding-bottom: 140px;
+}
