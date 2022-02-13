@@ -28,11 +28,11 @@
 .button {
   font-family: inherit;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 16px;
   font-weight: 700;
   text-align: center;
   color: #ffffff;
-  background-color: #3f3f3f;
+  background-color: #756257;
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 10px;
@@ -66,9 +66,6 @@ body {
 .page-header {
   margin: 0;
   padding: 0 70px;
-    /* лого накладывается на следующий блок */
-  margin-bottom: 0px;
-  z-index: 100;
 }
 
 .navigation {
@@ -76,7 +73,13 @@ body {
 }
 
 .main-logo {
+  display: flex;
+  align-items: center;
+  width: 139px;
   margin-right: 30px;
+      /* лого накладывается на следующий блок  */
+  margin-bottom: -5px;
+  z-index: 100;
 }
 
 .navigation-list {
@@ -86,32 +89,43 @@ body {
   margin: 0;
   padding:0;
   display: flex;
-  align-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  flex-wrap: wrap;
-  max-width: 445px;
-  margin: 0;
+  max-width: 450px;
 }
 
 .navigation-link {
   display: block;
+  padding: 0;
+  margin: 0;
+  color: #000000;
+  background-color: #ffffff;
+  text-decoration: none;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
-  text-decoration: none;
-  padding:20px 17px;
+  padding: 20px 17px;
 }
 
 .navigation-user {
+  margin: 0;
+  padding:0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 350px;
   margin-left: auto;
+  align-items: center;
 }
 
 .navigation-user .navigation-link{
-  min-width: 42px;
+  min-width: 18px;
+  min-height: 18px;
 }
 
-.navigation-user .button {
-  padding: 9px 15px 8px;
+/* вопрос по кнопке - она является .navigation-link соответственно получает черный цвет и белый фон,
+а определение кнопки находится выше в css значит ее свойства не применяются, что делать? */
+.navigation-user .navigation-link .button{
+  padding: 20px;
 }
 
 .main-index {
@@ -124,7 +138,7 @@ body {
   background-repeat: no-repeat, no-repeat;
   background-position: bottom, top;
   background-color: #c8c8c8;
-  padding-top: 46px;
+  padding-top: 51px;
   padding-bottom: 82px;
   /* не знаю почему но параметр высоты строки влияет на размер этого блока, при не нулевой высоте строки
   сам контейнер welcome увеличивается в размерах - почему?
@@ -134,8 +148,7 @@ body {
   }
 
 .advantages-header {
-  padding-top: 63px;
-  padding-bottom: 80px;
+  padding: 63px 240px 80px;
 }
 
 .advantages-main-title {
@@ -163,13 +176,14 @@ body {
   padding:0;
   display: flex;
   flex-wrap: wrap;
-  /* при переполнении контента остальные блоки будут растягиваться по высоте */
+  /* при переполнении контента остальные блоки будут растягиваться по высоте,
+  если элементов меньше чем на полный ряд то они располагаются в центре */
+  justify-content: center;
   align-items: stretch;
 }
 
 /* т.к текст в поле факта может меняться больше размера картинки, он будет определять высоту блока,
  зададим автоматический отступ сверху и снизу - так можно делать?*/
-
 .advantages-photo {
   margin: auto 0;
 }
@@ -191,40 +205,33 @@ padding: 0;
 .advantages-facts-item,
 .advantages-item {
   width: 400px;
-  /* при отсутствии контента размер сохранится */
+  /* при отсутствии контента (изображения) размер сохранится */
   min-height: 384px;
   box-sizing: border-box;
 }
 
 .advantages-item-info,
 .advantages-item  {
-  padding-top: 97px;
-}
-
-/* размер при нормальном наполнении определяется высотой блока,
+  padding-top: 98px;
+  /* размер при нормальном наполнении определяется высотой блока,
 если текста слишком много хочу чтобы он не прилипал к краю контейнера */
-
-.advantages-item-info {
   padding-bottom: 10px;
 }
+
 
 .advantages-facts-item {
-  padding: 184px 75px 10px;
+  padding: 185px 75px 10px;
 }
 
-.advantages-facts-title {
+.advantages-facts-item .advantages-facts-title {
   margin-bottom: 20px;
-}
-
-.advantages-item {
-  padding-bottom: 10px;
 }
 
 .advantages-title,
 .advantages-facts-title{
-  font-weight: 700;
   font-size: 24px;
   line-height: 28px;
+  font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 30px;
 }
@@ -247,10 +254,6 @@ padding: 0;
 .advantages-item {
   padding-left: 75px;
   padding-right: 75px;
-}
-
-.advantages-title {
-  margin-bottom: 21px;
 }
 
 .advantages-list,
@@ -285,7 +288,7 @@ padding: 0;
 }
 
 .hotel-search {
-  padding: 90px 240px;
+  padding: 90px 240px 87px;
 }
 
 .hotel-search-title {
@@ -309,15 +312,17 @@ padding: 0;
 .hotel-search-link {
   display: block;
   text-decoration: none;
+  font-size: 20px;
+  line-height: 36px;
   padding: 15px;
-  }
+ }
 
 .subscribe {
   color: #ffffff;
   background-color: #000000;
   background-image: url("../images/subscribe-background.jpg");
   background-repeat: no-repeat;
-  padding: 94px 240px;
+  padding: 92px 200px;
 }
 
 .subscribe-title {
@@ -336,6 +341,17 @@ padding: 0;
   margin-bottom: 45px;
   font-size: 22px;
   line-height: 26px;
+}
+
+.subscribe-form {
+  margin: 0;
+  padding: 0;
+}
+.subscribe-form .button {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+  padding: 17px;
 }
 
 /* Футер */
@@ -363,8 +379,7 @@ padding: 0;
   display: block;
   width: 25px;
   height: 25px;
-  border: 1px solid black;
-  margin-right: 30px;
+  margin-right: 20px;
   /* отступ снизу нужен для отступ между элементами при переполнении, когда получается несколько рядов */
   margin-bottom: 5px;
 }
@@ -378,6 +393,7 @@ padding: 0;
   line-height: 40px;
   color: inherit;
   text-decoration: none;
+
 }
 
 /* основные стили страница  каталога */
@@ -616,16 +632,4 @@ padding-bottom: 83px;
   background-color: #ffffff;
   text-align: center;
   padding-bottom: 140px;
-}
-
-.subscribe-title,
-.subscribe-description {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 46px;
-}
-
-.subscribe-form {
-  margin: 0;
-  padding: 0;
 }
