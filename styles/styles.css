@@ -393,7 +393,6 @@ padding: 0;
   line-height: 40px;
   color: inherit;
   text-decoration: none;
-
 }
 
 /* основные стили страница  каталога */
@@ -403,18 +402,18 @@ color:#ffffff;
 background-color: #000000;
 background-image: url("../images/catalog-background.jpg");
 background-repeat: no-repeat;
-padding: 0 72px;
-padding-top: 35px;
-padding-bottom: 83px;
+padding: 35px 72px 90px;
 }
 
 .hotels-title {
   margin: 0;
-  padding:0;
+  padding: 0;
   font-size: 60px;
-  line-height: 77px;
+  line-height: 78px;
   font-weight: 700;
-  margin-bottom: 5px;
+  /* в макете не совсем корректно нарисовано положение текста при высоте строки 78пх,
+  поэтому и отступ в другую сторону, думаю макет поправят */
+  margin-bottom: -7px;
 }
 
 .breadcrumbs {
@@ -447,6 +446,9 @@ padding-bottom: 83px;
 }
 
 .catalog-filter-title {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
   margin-bottom: 30px;
 }
 
