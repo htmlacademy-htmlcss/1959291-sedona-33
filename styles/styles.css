@@ -36,6 +36,7 @@
   text-decoration: none;
   text-transform: uppercase;
   border-radius: 10px;
+  padding: 9px 15px 8px;
 }
 
 html {
@@ -45,12 +46,11 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100%;
   width: 1200px;
-  margin: 0 auto;
   font-family: "PT Sans", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -144,8 +144,13 @@ body {
   сам контейнер welcome увеличивается в размерах - почему?
   мысль - img по умолчанию строчный элемент, видимо к нему и применяется высота строки
   */
-  line-height: 0;
   }
+
+  .welcome-logo {
+    display: block;
+    margin: 0 auto;
+  }
+
 
 .advantages-header {
   padding: 63px 240px 80px;
@@ -176,10 +181,6 @@ body {
   padding:0;
   display: flex;
   flex-wrap: wrap;
-  /* при переполнении контента остальные блоки будут растягиваться по высоте,
-  если элементов меньше чем на полный ряд то они располагаются в центре */
-  justify-content: center;
-  align-items: stretch;
 }
 
 /* т.к текст в поле факта может меняться больше размера картинки, он будет определять высоту блока,
