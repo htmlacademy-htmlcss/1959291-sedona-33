@@ -431,12 +431,13 @@ padding: 0;
 }
 
 /* основные стили страница  каталога */
+
 .hotels-catalog {
 color:#ffffff;
 background-color: #000000;
 background-image: url("../images/catalog-background.jpg");
 background-repeat: no-repeat;
-padding: 35px 72px 90px;
+padding: 35px 71px 79px;
 }
 
 .hotels-title {
@@ -502,12 +503,24 @@ padding: 35px 72px 90px;
 
 .catalog-filter-group:nth-child(1) {
   max-width: 150px;
-  margin-right: 67px;
+  margin-right: 60px;
+}
+
+.control-input {
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 19px;
+}
+
+.control {
+  display: inline-flex;
 }
 
 .catalog-filter-group:nth-child(2) {
   max-width: 160px;
-  margin-right: 167px;
+  margin-right: 170px;
 }
 
 .catalog-filter-group:nth-child(3) {
@@ -515,8 +528,24 @@ padding: 35px 72px 90px;
   margin-right: auto;
 }
 
-.catalog-filter > .button {
-  align-self: center;
+.catalog-filter-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.catalog-filter .button {
+  margin-top: 61px;
+  padding: 14px 35px 13px;
+  margin-bottom: 18px;
+}
+
+.catalog-filter .button:last-child {
+  margin: 0;
+  padding: 4px 35px 3px;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+  text-transform: none;
 }
 
 /* Результаты поиска */
@@ -592,6 +621,7 @@ padding: 35px 72px 90px;
 .hotel-card-image {
   display:block;
   margin-bottom: 16px;
+  object-fit: contain;
 }
 
 .hotel-card-title {
@@ -640,8 +670,8 @@ padding: 35px 72px 90px;
 
 .load-more{
   padding: 30px 218px;
-  border-top: 1px solid #E6E6E6;
-  border-bottom: 1px solid #E6E6E6;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
   display: flex;
   flex-direction: column;
   margin-bottom: 29px;
@@ -686,7 +716,7 @@ padding: 35px 72px 90px;
 
 .pagination-current {
   color: #000000;
-  background-color: #F2F2F2;;
+  background-color: #f2f2f2;;
 }
 
 .hotels-on-page {
@@ -702,7 +732,7 @@ padding: 35px 72px 90px;
   margin-left: 47px;
   padding: 12px;
   padding-top: 14px;
-  border: 2px solid #E6E6E6;
+  border: 2px solid #e6e6e6;
   box-sizing: border-box;
   border-radius: 4px;
 }
@@ -711,7 +741,7 @@ padding: 35px 72px 90px;
   color: #000000;
   background-color: #ffffff;
   text-align: center;
-  padding: 73px 200px 140px;
+  padding: 73px 200px 143px;
 }
 
 .subscribe-hotels .subscribe-title {
@@ -719,5 +749,5 @@ padding: 35px 72px 90px;
 }
 
 .subscribe-hotels .input {
-background: #F2F2F2;
+  background: #f2f2f2;
 }
