@@ -627,7 +627,6 @@ padding: 35px 71px 79px;
 }
 
 .hotel-card-title {
-
   margin: 0;
   padding: 0;
   font-size: 24px;
@@ -660,7 +659,34 @@ padding: 35px 71px 79px;
 .hotel-card-ratings {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
+.hotel-stars {
+margin: 0;
+padding: 0;
+background-image: url("../images/star.svg");
+/* (Ширина звезды 17px + отступ между звездами 8px = 25px) */
+background-size: 25px 17px;
+background-repeat: repeat-x;
+/* ставим на минус половину отступа -(8 / 2) = -4px по горизонтали */
+background-position: -4px center;
+height: 17px;
+}
+
+/*
+5 звезд = 5*25px-8px = 117px
+4 звезды = 4*25px-8px = 92px
+3 звезды = 3*25px-8px = 67px
+2 звезды = 2*25px-8px = 42px
+1 звезда = 1*25px-8px = 17px
+*/
+
+.hotel-stars-5 {width: 117px;}
+.hotel-stars-4 {width: 92px;}
+.hotel-stars-3 {width: 67px;}
+.hotel-stars-2 {width: 42px;}
+.hotel-stars-1 {width: 17px;}
 
 .hotel-rating {
   display: block;
