@@ -95,7 +95,7 @@ body {
 }
 
 .navigation-list {
-    /* максимальная ширина и wrap нужны для критерия переполнения,
+  /* максимальная ширина и wrap нужны для критерия переполнения,
   чтобы при добавлении новых пунктов меню не сломалось */
   list-style: none;
   margin: 0;
@@ -126,8 +126,6 @@ body {
   font-weight: 700;
   padding: 20px 17px;
   padding-bottom: 19px;
-  /* ссылки по макету залезают на 1пх на соседний блок */
-  /* margin-bottom: -1px; */
 }
 
 .navigation-user {
@@ -163,8 +161,9 @@ body {
 }
 
 
-/* зеленый кружок и цифра 12, скорее всего этот эеломент создается скриптами,
+/* зеленый кружок и цифра 12, скорее всего этот элемент создается скриптами,
 но пока могу только так */
+
 .navigation-user .navigation-item:nth-child(2)::after {
   display: flex;
   position: absolute;
@@ -577,7 +576,7 @@ padding: 35px 71px 79px;
   line-height: 78px;
   font-weight: 700;
   /* в макете не совсем корректно нарисовано положение текста при высоте строки 78пх,
-  поэтому и отступ в другую сторону, думаю макет поправят */
+  поэтому и отступ в другую сторону*/
   margin-bottom: -7px;
 }
 
@@ -587,17 +586,52 @@ padding: 35px 71px 79px;
   padding:0;
   display: flex;
   margin-bottom: 45px;
+  margin-left: 2px;
+}
+
+.breadcrumbs-item {
+  margin-right: 26px;
+  position:relative;
+}
+
+.breadcrumbs-item:last-child {
+  margin-right: 0;
 }
 
 .breadcrumbs-link {
   font-size: 16px;
+  line-height: 21px;
   color: inherit;
   text-decoration: none;
-  padding-right: 10px;
 }
 
-.breadcrumbs-link:last-child {
-  padding-right: 0;
+.breadcrumbs-home {
+  display: block;
+  width: 12px;
+  height: 21px;
+  background-image: url("../images/interface.svg");
+  background-repeat: no-repeat;
+  background-position: -146px;
+}
+
+.breadcrumbs-item:not(:last-child)::after {
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  right: -16px;
+  width: 5px;
+  height: 8px;
+  content:"";
+  background-image: url("../images/interface.svg");
+  background-repeat: no-repeat;
+  background-position: -180px;
+  opacity: 40%;
+  /* в стайлгайде этой стрелочки нет, при этом она еще и с тенью, стрелку я стащил из макета,
+  тень брать не стал, ее все равно не видно совсем, и задал прозрачность для белого */
+}
+
+.breadcrumbs-link:hover {
+  opacity: 30%;
 }
 
 .catalog-filter {
@@ -705,6 +739,8 @@ padding: 35px 71px 79px;
   border-radius: 4px;
   font-size: 18px;
   line-height: 23px;
+  margin-right: 81px;
+  padding-left: 19px;
 }
 
 .sorting-buttons-group {
@@ -712,16 +748,54 @@ padding: 35px 71px 79px;
 }
 
 .sorting-buttons-group .button {
-  display: block;
+  display: inline-block;
   box-sizing: border-box;
   width: 48px;
   height: 48px;
   margin-right: 8px;
+  /* border: 2px solid black; */
+  background-color:#ffffff;
+  background-repeat: no-repeat;
 }
 
 .sorting-buttons-group .button:last-child {
   margin-right: 0;
 }
+
+/* display: block;
+width: 12px;
+height: 21px;
+background-image: url("../images/interface.svg");
+background-repeat: no-repeat;
+background-position: -146px; */
+
+.small-icons {
+  display:block;
+  width: 16px;
+  height: 14px;
+  background-image: url("../images/interface.svg");
+  background-repeat: no-repeat;
+  background-position: -264px;
+}
+
+.big-icons {
+  display:block;
+  width: 16px;
+  height: 14px;
+  background-image: url("../images/interface.svg");
+  background-repeat: no-repeat;
+  background-position: -228px;
+}
+
+.list-with-info {
+  display:block;
+  width: 16px;
+  height: 14px;
+  background-image: url("../images/interface.svg");
+  background-repeat: no-repeat;
+  background-position: -192px;
+}
+
 
 .hotels-list {
   list-style: none;
@@ -900,7 +974,7 @@ height: 17px;
   color: #000000;
   background-color: #ffffff;
   text-align: center;
-  padding: 73px 200px 143px;
+  padding: 73px 200px 141px;
 }
 
 .subscribe-hotels .subscribe-title {
