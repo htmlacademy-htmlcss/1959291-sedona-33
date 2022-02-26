@@ -51,9 +51,6 @@
 .button-green {
   background-color: #7DB54F;
 }
-.button-no-color {
-  background-color:rgba(0, 0, 0, 0);
-}
 
 html {
   background-color:#f2f2f2;
@@ -81,7 +78,7 @@ body {
 }
 
 .navigation {
-  display:flex;
+  display: flex;
 }
 
 .main-logo {
@@ -185,7 +182,7 @@ body {
 }
 
 /* состояния главное меню */
-.current {
+.navigation-link .current {
   border-bottom: 2px solid #756257;
   margin-bottom: -1px;
 }
@@ -433,7 +430,7 @@ padding: 0;
 }
 
 .hotel-search {
-  padding: 91px 303px 93px;
+  padding: 91px 303px 92px;
 }
 
 .hotel-search-title {
@@ -528,17 +525,17 @@ padding: 0;
 
 /* состояния поле ввода данных */
 
-.input:hover {
+.subscribe-form .input:hover {
   background-color: #E6E6E6
 }
 
-.input:focus {
+.subscribe-form .input:focus-visible {
   background-color: #E6E6E6;
   outline: 3px solid #83B3D3;
   outline-offset: 0;
 }
 
-.input:invalid {
+.subscribe-form .input:invalid {
   background-color: #ffffff;
   border: 3px solid #FF5757;
 }
@@ -565,8 +562,7 @@ padding: 0;
 }
 
 .subscribe-form .button:active {
-  opacity: 0.3;
-  background-color: #68A2CA
+ color: rgba(255, 255, 255, 0.3)
 }
 
 /* Футер */
@@ -575,8 +571,7 @@ padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* с учетом размера кнопочки социальных сетей */
-  padding: 40px 72px 40px 62px;
+  padding: 40px 72px 40px 72px;
 }
 
 /* для переполнения блока */
@@ -592,6 +587,8 @@ padding: 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  /* для  границы первой кнопки пр фокусировании*/
+  margin-left: -10px;
 }
 
 .footer-social-link {
@@ -678,7 +675,7 @@ padding: 35px 71px 79px;
   font-weight: 700;
   /* в макете не совсем корректно нарисовано положение текста при высоте строки 78пх,
   поэтому и отступ в другую сторону*/
-  margin-bottom: -7px;
+  margin-bottom: -9px;
 }
 
 .breadcrumbs {
@@ -686,13 +683,15 @@ padding: 35px 71px 79px;
   margin: 0;
   padding:0;
   display: flex;
-  margin-bottom: 45px;
+  margin-bottom: 42px;
   margin-left: 2px;
 }
 
 .breadcrumbs-item {
-  margin-right: 26px;
+  margin-right: 18px;
   position:relative;
+  /* смещения для границы фокуса */
+  margin-left: -8px;
 }
 
 .breadcrumbs-item:last-child {
@@ -704,6 +703,10 @@ padding: 35px 71px 79px;
   line-height: 21px;
   color: inherit;
   text-decoration: none;
+  padding: 3px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .breadcrumbs-home {
@@ -712,27 +715,38 @@ padding: 35px 71px 79px;
   height: 21px;
   background-image: url("../images/interface.svg");
   background-repeat: no-repeat;
-  background-position: -146px;
+  background-position: -138px;
 }
 
 .breadcrumbs-item:not(:last-child)::after {
   display: block;
   position: absolute;
-  bottom: 5px;
-  right: -16px;
+  top: 10px;
+  right: -7px;
   width: 5px;
   height: 8px;
   content:"";
   background-image: url("../images/interface.svg");
   background-repeat: no-repeat;
   background-position: -180px;
-  opacity: 40%;
+  opacity: 0.4;
   /* в стайлгайде этой стрелочки нет, при этом она еще и с тенью, стрелку я стащил из макета,
   тень брать не стал, ее все равно не видно совсем, и задал прозрачность для белого */
 }
 
+/* состояния хлебных крошек */
 .breadcrumbs-link:hover {
-  opacity: 30%;
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:focus-visible {
+  outline: 3px solid #83B3D3;
+  outline-offset: 0px;
+  border-radius: 5px;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
 }
 
 .catalog-filter {
@@ -746,6 +760,7 @@ padding: 35px 71px 79px;
 }
 
 .catalog-filter-title {
+  padding: 0;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
@@ -798,19 +813,49 @@ padding: 35px 71px 79px;
   flex-direction: column;
 }
 
-.catalog-filter .button {
+.catalog-filter-buttons .button {
   margin-top: 61px;
   padding: 14px 35px 13px;
   margin-bottom: 18px;
 }
 
-.catalog-filter .button:last-child {
+.catalog-filter-buttons .button[type="reset"] {
   margin: 0;
   padding: 4px 35px 3px;
   font-size: 18px;
   line-height: 23px;
   font-weight: 400;
   text-transform: none;
+  background: none;
+}
+
+
+/* состояния кнопки фильтра */
+.catalog-filter-buttons .button:hover {
+  background-color: #68A2CA;
+}
+
+.catalog-filter-buttons .button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 0px;
+}
+
+.catalog-filter-buttons .button:active {
+  color:rgba(255, 255, 255, 0.3)
+}
+
+.catalog-filter-buttons .button[type="reset"]:hover {
+  background: none;
+  opacity: 0.3;
+}
+
+.catalog-filter-buttons .button[type="reset"]:focus-visible {
+  outline: 3px solid #83B3D3;
+  outline-offset: 0px;
+}
+
+.catalog-filter-buttons .button[type="reset"]:active {
+  color:rgba(255, 255, 255, 0.3)
 }
 
 /* Результаты поиска */
@@ -833,19 +878,54 @@ padding: 35px 71px 79px;
   margin-right:auto;
 }
 
+.select-wrapper {
+  position: relative;
+  display: flex;
+}
+
 .sorting-control {
   width: 287px;
   box-sizing: border-box;
+  padding-left: 18px;
+  padding-right: 40px;
   border: 2px solid #E6E6E6;
   border-radius: 4px;
+  font: inherit;
   font-size: 18px;
-  line-height: 23px;
-  margin-right: 81px;
-  padding-left: 19px;
+  line-height: 24px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-wrapper::after {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 17px;
+  width: 20px;
+  height: 10px;
+  content:"";
+  background-image: url("../images/interface.svg");
+  background-repeat: no-repeat;
+  background-position: -120px;
+  opacity: 0.3;
+}
+
+/* состояния для сортировки */
+.sorting-control:hover,
+.sorting-control:focus-visible{
+  border: 2px solid #83B3D3;
+  outline: none;
+}
+
+.sorting-control:active {
+  border: 2px solid #E6E6E6;
+  opacity: 0.3;
 }
 
 .sorting-buttons-group {
   display: flex;
+  margin-left: 81px;
 }
 
 .sorting-buttons-group .button {
@@ -854,7 +934,6 @@ padding: 35px 71px 79px;
   width: 48px;
   height: 48px;
   margin-right: 8px;
-  /* border: 2px solid black; */
   background-color:#ffffff;
   background-repeat: no-repeat;
 }
@@ -862,13 +941,6 @@ padding: 35px 71px 79px;
 .sorting-buttons-group .button:last-child {
   margin-right: 0;
 }
-
-/* display: block;
-width: 12px;
-height: 21px;
-background-image: url("../images/interface.svg");
-background-repeat: no-repeat;
-background-position: -146px; */
 
 .small-icons {
   display:block;
@@ -897,6 +969,23 @@ background-position: -146px; */
   background-position: -192px;
 }
 
+/* состояния для кнопок сортировки */
+.sorting-buttons-group .button{
+  border: 2px solid #E6E6E6;;
+  border-radius: 4px;
+}
+
+.sorting-buttons-group .current {
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.sorting-buttons-group .button:hover,
+.sorting-buttons-group .button:focus-visible  {
+  border: 2px solid #83B3D3;;
+  border-radius: 4px;
+  outline: none;
+}
 
 .hotels-list {
   list-style: none;
@@ -917,6 +1006,7 @@ background-position: -146px; */
   padding: 20px;
 }
 
+
 .hotel-card-image-link,
 .hotel-card-title-link {
   text-decoration: none;
@@ -925,8 +1015,21 @@ background-position: -146px; */
 
 .hotel-card-image {
   display:block;
-  margin-bottom: 16px;
   object-fit: contain;
+}
+
+/* состояния для картинки карточки */
+.hotel-card-image-link:hover {
+  opacity: 0.6;
+}
+
+.hotel-card-image-link:focus-visible {
+  outline: 3px solid #83B3D3;
+  outline-offset: 0;
+}
+
+.hotel-card-image-link:active {
+  opacity: 0.3;
 }
 
 .hotel-card-title {
@@ -935,8 +1038,7 @@ background-position: -146px; */
   font-size: 24px;
   line-height: 31px;
   font-weight: 700;
-  margin-bottom: 16px;
-
+  margin: 16px 0;
 }
 
 .hotel-type,
@@ -954,10 +1056,65 @@ background-position: -146px; */
   margin-bottom: 16px;
 }
 
-.hotel-card-information-button {
+.hotel-card-information-about,
+.hotel-card-information-favorites {
   font-size: 16px;
   line-height: 21px;
   padding: 8px 0;
+}
+
+/* состояния кнопок карточки отеля коричневая кнопка*/
+.hotel-card-information .button-brown:hover {
+  background-color: #615048;
+}
+
+.hotel-card-information .button-brown:focus-visible {
+  outline-offset: 0;
+  outline: 3px solid #83B3D3;
+}
+
+.hotel-card-information .button-brown:active {
+  color: rgb(255, 255, 255, 0.3)
+}
+
+/* состояния кнопок карточки отеля синяя кнопка*/
+.hotel-card-information .button-light-blue:hover {
+  background-color: #68A2CA;
+  border: 1px solid #756257;
+  padding: 7px 0;
+}
+
+.hotel-card-information .button-light-blue:focus-visible {
+  background-color: #68A2CA;
+  outline-offset: 0;
+  outline: 3px solid #756257;
+}
+
+.hotel-card-information .button-light-blue:active {
+  background-color: #68A2CA;
+  border: 1px solid #756257;
+  padding: 7px 0;
+  color: rgb(255, 255, 255, 0.3)
+}
+
+/* состояния кнопок карточки отеля зеленая кнопка*/
+.hotel-card-information .button-green:hover {
+  background-color: #6C9E42;
+  border: 1px solid #756257;
+  padding: 7px 0;
+}
+
+.hotel-card-information .button-green:focus-visible {
+  background-color: #6C9E42;
+  outline-offset: 0;
+  outline: 3px solid #756257;
+}
+
+.hotel-card-information .button-green:active {
+  background-color: #6C9E42;
+  border: 1px solid #756257;
+  padding: 7px 0;
+  color: rgb(255, 255, 255, 0.3)
 }
 
 .hotel-card-ratings {
@@ -967,23 +1124,23 @@ background-position: -146px; */
 }
 
 .hotel-stars {
-margin: 0;
-padding: 0;
-background-image: url("../images/star.svg");
-/* (Ширина звезды 17px + отступ между звездами 8px = 25px) */
-background-size: 25px 17px;
-background-repeat: repeat-x;
-/* ставим на минус половину отступа -(8 / 2) = -4px по горизонтали */
-background-position: -4px center;
-height: 17px;
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/star.svg");
+  /* (Ширина звезды 17px + отступ между звездами 8px = 25px) */
+  background-size: 25px 17px;
+  background-repeat: repeat-x;
+  /* ставим на минус половину отступа -(8 / 2) = -4px по горизонтали */
+  background-position: -4px center;
+  height: 17px;
 }
 
 /*
-5 звезд = 5*25px-8px = 117px
-4 звезды = 4*25px-8px = 92px
-3 звезды = 3*25px-8px = 67px
-2 звезды = 2*25px-8px = 42px
-1 звезда = 1*25px-8px = 17px
+  5 звезд = 5*25px-8px = 117px
+  4 звезды = 4*25px-8px = 92px
+  3 звезды = 3*25px-8px = 67px
+  2 звезды = 2*25px-8px = 42px
+  1 звезда = 1*25px-8px = 17px
 */
 
 .hotel-stars-5 {width: 117px;}
@@ -1017,8 +1174,24 @@ height: 17px;
   padding: 17px;
 }
 
+/* состояния кнопка загрузить еще, по макету на задана */
+.load-more button:hover {
+  background-color: #68A2CA;
+}
+
+.load-more button:focus-visible {
+  background-color: #68A2CA;
+  outline-offset: 0;
+  outline: 3px solid #756257;
+}
+
+.load-more button:active {
+  color: rgba(255, 255, 255, 0.3)
+}
+
 .sorting-pagination {
   display: flex;
+  align-items: center;
 }
 
 .pagination {
@@ -1037,38 +1210,64 @@ height: 17px;
 }
 
 .pagination-link {
-  display: block;
-  box-sizing: border-box;
+  display: flex;
   width: 55px;
   height: 55px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
   text-decoration: none;
-  padding: 15px;
 }
 
-.pagination-current {
+/* состояния пагинация  */
+
+.pagination-link:hover {
+  background-color: #68A2CA;
+}
+
+.pagination-link:focus-visible {
+  background-color: #68A2CA;
+  outline: 3px solid #756257;
+  outline-offset: 0;
+}
+
+.pagination-link:active {
+  color: rgba(255, 255, 255, 0.3)
+}
+
+.pagination-item .current {
   color: #000000;
-  background-color: #f2f2f2;;
+  background-color: #f2f2f2;
+  cursor: default;
 }
 
 .hotels-on-page {
   margin-left: auto;
   font-size: 18px;
   line-height: 23px;
+  /* на макете текст не по центру строки */
+  padding-bottom: 2px;
+}
+
+/* аналогичная стрелочка как в фильтре отелей, отличается положение */
+.sorting-pagination .select-wrapper::after {
+  top: 22px;
 }
 
 .hotels-on-page-control {
+  font: inherit;
   font-size: 18px;
   line-height: 23px;
-  width: 160px;
-  margin-left: 47px;
-  padding: 12px;
-  padding-top: 14px;
-  border: 2px solid #e6e6e6;
   box-sizing: border-box;
+  width: 160px;
+  padding: 10px 40px 11px 15px;
+  margin: 3px 0 4px 51px;
+  border: 2px solid #e6e6e6;
   border-radius: 4px;
+  appearance: none;
 }
 
 .subscribe-hotels {
