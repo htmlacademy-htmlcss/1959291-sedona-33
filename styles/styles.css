@@ -159,20 +159,20 @@ body {
 
 .items-in-favorites {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   width: 20px;
   height: 20px;
   background-color: #7DB54F;
   border: none;
   border-radius: 50%;
-  top: 15px;
+  top: 13px;
   left: 24px;
-  content:"12";
   color: #ffffff;
   font-size: 10px;
   line-height: 13px;
-  justify-content: center;
-  align-items: center;
+
 }
 
 .navigation-item .button{
@@ -182,7 +182,7 @@ body {
 }
 
 /* состояния главное меню */
-.navigation-link .current {
+.navigation-item  .current {
   border-bottom: 2px solid #756257;
   margin-bottom: -1px;
 }
@@ -430,7 +430,7 @@ padding: 0;
 }
 
 .hotel-search {
-  padding: 91px 303px 92px;
+  padding: 91px 303px 93px;
 }
 
 .hotel-search-title {
@@ -449,7 +449,7 @@ padding: 0;
 .hotel-search-instruction {
   padding: 0;
   margin: 0;
-  margin-bottom: 55px;
+  margin-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
 }
@@ -1252,7 +1252,7 @@ padding: 35px 71px 79px;
   padding-bottom: 2px;
 }
 
-/* аналогичная стрелочка как в фильтре отелей, отличается положение */
+/* аналогичная стрелочка как в фильтре отелей, отличается */
 .sorting-pagination .select-wrapper::after {
   top: 22px;
 }
