@@ -664,7 +664,7 @@ color:#ffffff;
 background-color: #000000;
 background-image: url("../images/catalog-background.jpg");
 background-repeat: no-repeat;
-padding: 35px 71px 79px;
+padding: 35px 72px 81px 72px;
 }
 
 .hotels-title {
@@ -764,7 +764,7 @@ padding: 35px 71px 79px;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin-bottom: 31px;
 }
 
 .catalog-filter-list {
@@ -774,7 +774,7 @@ padding: 35px 71px 79px;
 }
 
 .catalog-filter-item {
-  margin-bottom: 13px;
+  margin-bottom: 15px;
 }
 
 .catalog-filter-item:last-child {
@@ -783,7 +783,7 @@ padding: 35px 71px 79px;
 
 .catalog-filter-group:nth-child(1) {
   max-width: 150px;
-  margin-right: 60px;
+  margin-right: 68px;
 }
 
 .control-input {
@@ -796,16 +796,194 @@ padding: 35px 71px 79px;
 
 .control {
   display: inline-flex;
+  position: relative;
+  padding-left: 39px;
+}
+
+.control-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+/* состояния чекбоксы */
+.control:hover .control-mark {
+  opacity: 0.6;
+}
+
+/* у нашего элемента не может быть фокуса с клавиатуры, я не знаю что с этим делать,
+фокус попадает на скрытый input*/
+.control-mark:focus-visible,
+.control-mark:focus {
+  opacity: 0.6;
+  outline: 3px solid #83B3D3;
+}
+
+.control:active .control-mark {
+  opacity: 0.3;
+}
+
+.control-input[type="checkbox"]:checked + .control-mark::before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  content: "";
+  background-image: url("../images/mark.svg");
+  background-repeat: no-repeat;
+  background-position: 4px 5px;
+}
+
+.control-input[type="radio"] + .control-mark {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .control-mark::before {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  content: "";
+  border-radius: 50%;
+  background-color: #3F5E72;
+}
+
+.range-wrapper-inputs {
+  display: flex;
+  padding-top: 4px;
+  margin-bottom: 28px;
+}
+
+.range-input::-webkit-outer-spin-button,
+.range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.range-input-min,
+.range-input-max {
+  position:relative;
+}
+
+.range-input {
+  width: 144px;
+  box-sizing: border-box;
+  padding: 13px 35px 8px 17px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: inherit;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.range-wrapper-inputs .min {
+  border-radius: 4px 0 0 4px;
+  border-right: 1px solid #ffffff;
+}
+
+.range-wrapper-inputs .max {
+  /* у правого поля ввода другой паддинг и размер, странно конечно*/
+  width: 143px;
+  padding-left: 15px;
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid #ffffff;
+}
+
+/* у инпут нельзя сделать псевдоэлемент, пришлось добавить обертку и спан в верстку */
+
+.info-text-min,
+.info-text-max {
+  position: absolute;
+  font-size: 18px;
+  line-height: 23px;
+  right: 14px;
+  top: 12px;
+  color: #FFFFFF;
+  opacity: 0.3;
+}
+
+/* оторвать руки тому кто нарисовал разные отступы в этих элементах */
+.info-text-max {
+  right: 17px;
+}
+
+/* состояния полей ввода данных */
+.range-input:hover {
+  border-color: rgba(255, 255, 255, 0.6)
+}
+
+.range-input:focus-visible {
+  box-shadow: 0px 0px 0px 3px #81B3D2;
+  outline: 3px solid #81B3D2;
+  outline-offset: -4px;
+}
+
+.range-input:active {
+  background-color: #756257;
+}
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.range-bar {
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
+.range-toggle {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.toggle-min {
+  top: -15px;
+  left: 0;
+}
+
+.toggle-max {
+  top: -15px;
+  left: 191px;
+}
+
+/* состояния ползунков */
+.range-toggle:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.range-toggle:focus-visible {
+  outline: 3px solid #83B3D3;
+  outline-offset: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.range-toggle:active {
+  outline: 2px solid #83B3D3;
+  outline-offset: 0;
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.4);
 }
 
 .catalog-filter-group:nth-child(2) {
   max-width: 160px;
-  margin-right: 170px;
+  margin-right: 168px;
 }
 
 .catalog-filter-group:nth-child(3) {
-  max-width: 287px;
-  margin-right: auto;
+  max-width: 288px;
+  margin-right: 81px;
 }
 
 .catalog-filter-buttons {
@@ -815,8 +993,8 @@ padding: 35px 71px 79px;
 
 .catalog-filter-buttons .button {
   margin-top: 61px;
-  padding: 14px 35px 13px;
-  margin-bottom: 18px;
+  padding: 13px 35px 15px;
+  margin-bottom: 15px;
 }
 
 .catalog-filter-buttons .button[type="reset"] {
@@ -828,7 +1006,6 @@ padding: 35px 71px 79px;
   text-transform: none;
   background: none;
 }
-
 
 /* состояния кнопки фильтра */
 .catalog-filter-buttons .button:hover {
@@ -871,7 +1048,9 @@ padding: 35px 71px 79px;
 
 .sorting-results-heading {
   margin: 0;
+  margin-left: -1px;
   padding: 4px 0 6px;
+  font-family: inherit;
   font-size: 30px;
   line-height: 38px;
   text-transform: uppercase;
