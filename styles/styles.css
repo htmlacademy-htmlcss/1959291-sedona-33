@@ -87,7 +87,7 @@ body {
   margin-right: 30px;
       /* лого накладывается на следующий блок 5пх */
   margin-bottom: -5px;
-  z-index: 100;
+  z-index: 1;
 }
 
 .navigation-list {
@@ -466,7 +466,6 @@ padding: 0;
 }
 
 /* состояния кнопки */
-
 .hotel-search-link:hover {
   background-color: #615048;
 }
@@ -657,14 +656,283 @@ padding: 0;
   color: rgb(117, 98, 87, 0.3);
 }
 
-/* основные стили страница  каталога */
+/* модальное окно */
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height:100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 1;
+}
 
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 70px;
+  padding-top: 62px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  z-index: 2;
+  width: 715px;
+  box-sizing: border-box;
+}
+
+.modal-close-button {
+  position:absolute;
+  top: 54px;
+  right: 70px;
+  padding: 0;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  border: none;
+  background-color: #F2F2F2;
+  cursor: pointer;
+}
+
+/* для смены цвета в активном состоянии пришлось добавить как инлайн свг */
+.modal-close-button-icon{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+/* состояния кнопки модального окна */
+.modal-close-button:hover {
+  background-color:#E5E5E5;
+}
+.modal-close-button:focus-visible {
+  background-color:#E6E6E6;
+  outline: 3px solid #83B3D3;
+  outline-offset: 0;
+}
+
+.modal-close-button:active {
+  color: rgba(0, 0, 0, 0.3)
+}
+
+.modal-title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin-bottom: 59px;
+}
+
+/* форма ввода данных модального окна */
+.modal-form{
+  display: grid;
+  grid-template-columns: 133px 133px 116px 133px;
+  grid-template-rows: 50px 40px 50px 40px 50px 40px 50px;
+  column-gap: 20px;
+}
+
+.arrival-date-label,
+.departure-date-label,
+.adults-label {
+  grid-column: 1 / 2;
+  align-self: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.arrival-date,
+.departure-date {
+  grid-column: 2 / 5;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  padding:0 19px;
+  appearance: none;
+  border-radius: 4px;
+  background-image: url(../images/calendar.svg);
+  background-repeat: no-repeat;
+  background-position: right 25px center;
+  border: none;
+  border-radius: 4px;
+  background-color:#F2F2F2;
+}
+
+.arrival-date::-webkit-calendar-picker-indicator,
+.departure-date::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.arrival-date-info,
+.departure-date-info {
+  grid-column: 2/-1;
+  font-size: 16px;
+}
+
+.adults {
+  grid-column: 2/3;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  padding-left: 61px;
+  padding-right: 50px;
+  border: none;
+  border-radius: 4px;
+  background-color:#F2F2F2;
+}
+
+.adults::-webkit-outer-spin-button,
+.adults::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.children-label {
+  grid-column: 3/4;
+  align-self: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.children-label {
+  /* переполнение при слишком длинном слове */
+  overflow-wrap: break-word;
+}
+
+.tooltip {
+  position: absolute;
+}
+
+.tooltip-toggle {
+  border: none;
+  background-color: #83B3D3;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.tooltip-icon {
+  width: 100%;
+  color: #ffffff;
+  display: block;
+}
+
+.tooltip-text {
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: none;
+  padding: 15px 18px 15px 22px;
+  border-radius: 10px;
+  display: block;
+  width: 265px;
+  position: absolute;
+  top: 100%;
+  transform: translateX(-50%) translateX(10px);
+  margin-top: 15px;
+  display: none;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.tooltip-text:before {
+  content: "";
+  background-image: url(../images/tooltip-arrow.svg);
+  width: 19px;
+  height: 9px;
+  position:absolute;
+  top: -9px;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.children {
+  grid-column: 4/5;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: inherit;
+  padding-left: 61px;
+  padding-right: 50px;
+  border: none;
+  border-radius: 4px;
+  background-color:#F2F2F2;
+}
+
+.children::-webkit-outer-spin-button,
+.children::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.modal-form .button {
+  padding:0;
+  grid-column: 1/-1;
+  grid-row: 7/8;
+}
+
+/* состояния модальное окно */
+
+.arrival-date:hover,
+.departure-date:hover,
+.adults:hover,
+.children:hover {
+  background-color: #E6E6E6;
+}
+
+.arrival-date:focus-visible,
+.departure-date:focus-visible,
+.adults:focus-visible,
+.children:focus-visible {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+}
+
+.arrival-date:active,
+.departure-date:active,
+.adults:active,
+.children:active {
+  background-color: #ffffff;
+  outline: 2px solid #000000;
+  outline-offset: -2px;;
+}
+
+/* состояние сообщение об ошибке */
+.message-error {
+  color: #FF5757;
+}
+
+/* состояние кнопка формы*/
+.modal-form button:hover {
+  background-color: #68A2CA;
+}
+
+.modal-form button:focus-visible {
+  outline: 3px solid #756257;
+  outline-offset: 0;
+}
+
+.modal-form button:hover {
+  color:rgba(255, 255, 255, 0.3)
+}
+
+
+/* основные стили страница  каталога */
 .hotels-catalog {
-color:#ffffff;
-background-color: #000000;
-background-image: url("../images/catalog-background.jpg");
-background-repeat: no-repeat;
-padding: 35px 72px 81px 72px;
+  color:#ffffff;
+  background-color: #000000;
+  background-image: url("../images/catalog-background.jpg");
+  background-repeat: no-repeat;
+  padding: 35px 72px 81px 72px;
 }
 
 .hotels-title {

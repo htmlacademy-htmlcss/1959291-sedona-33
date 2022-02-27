@@ -120,7 +120,6 @@
           <h2 class="subscribe-title">Подпишитесь на рассылку</h2>
           <p class="subscribe-description">Только полезная информация и никакого спама, <br>честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <!-- label для всех инпутов, class = field -->
             <label class="visually-hidden" for="subscribe-email">Ваш e-mail </label>
             <input id="subscribe-email" class="input" type="email" name="subscribe-email" placeholder="Ваш e-mail">
             <button class="button button-light-blue" type="submit">Подписаться</button>
@@ -174,6 +173,43 @@
           </a>
         </div>
       </footer>
+        <!-- style="display: none;"-->
+      <div class="modal-container">
+        <div class="modal">
+          <button class="modal-close-button">
+            <span class="visually-hidden">Закрыть.</span>
+            <svg class="modal-close-button-icon" width="13" height="13" viewBox="0 0 13 13" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 1.2 11.8 0 6.5 5.3 1.2 0 0 1.2l5.3 5.3L0 11.8 1.2 13l5.3-5.3 5.3 5.3 1.2-1.2-5.3-5.3L13 1.2Z"/>
+            </svg>
+          </button>
+          <section class="modal-content">
+            <h2 class="modal-title">Поиск гостиницы в Седоне</h2>
+            <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+              <label class="arrival-date-label" for="arrival-date">Дата заезда:</label>
+              <input class="arrival-date" id="arrival-date" class="input" type="date" name="arrival-date" value="2020-04-27" placeholder="Укажите дату">
+              <span class="arrival-date-info message-error">Мы не можем отправить вас в прошлое.</span>
+              <label class="departure-date-label" for="departure-date">Дата заезда:</label>
+              <input class="departure-date" id="departure-date" class="input" type="date" name="departure-date" value="2021-09-01">
+              <span class="departure-date-info">На эти даты есть свободные номера. Пока есть.</span>
+              <label class="adults-label" for="adults">Взрослые:</label>
+              <input class="adults" id="adults" class="input" type="number" name="adults" value="2">
+              <span class="children-label">
+                <label class="children-label" for="children">Дети:</label>
+                  <span class="tooltip">
+                    <button class="tooltip-toggle" type="button" aria-labelledby="tooltip-label">
+                      <svg class="tooltip-icon" width="1" height="9" viewBox="0 0 1 9" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 9h1V3H0v6ZM1 0H0v1h1V0Z" />
+                      </svg>
+                    </button>
+                    <span class="tooltip-text" role="tooltip" и id="tooltip-label">Укажите количество детей, которые будут с вами, возраст которых от 6 до 18 лет. Дети до 6 лет размещаются бесплатно.</span>
+                  </span>
+              </span>
+              <input class="children" id="children" class="input" type="number" name="children" value="1">
+              <button class="button button-light-blue" type="submit">Найти</button>
+            </form>
+          </section>
+        </div>
+      </div>
   </body>
 </html>
 
