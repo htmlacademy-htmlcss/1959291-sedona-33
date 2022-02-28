@@ -665,6 +665,7 @@ padding: 0;
   width: 100%;
   height:100%;
   background-color: rgba(242, 242, 242, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
@@ -703,7 +704,7 @@ padding: 0;
   margin: auto;
 }
 
-/* состояния кнопки модального окна */
+/* состояния кнопки закрытия модального окна */
 .modal-close-button:hover {
   background-color:#E5E5E5;
 }
@@ -718,42 +719,50 @@ padding: 0;
 }
 
 .modal-title {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 59px;
+  /* смещение от всей формы влево */
+  margin-left: -2px;
   font-weight: 700;
   font-size: 30px;
   line-height: 40px;
   text-transform: uppercase;
-  margin-bottom: 59px;
+
 }
 
-/* форма ввода данных модального окна */
-.modal-form{
+.field-group {
+  padding: 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: 133px 133px 116px 133px;
-  grid-template-rows: 50px 40px 50px 40px 50px 40px 50px;
+  grid-template-columns: 135px 133px 1fr 133px;
+  grid-template-rows: 50px 40px;
   column-gap: 20px;
 }
 
 .arrival-date-label,
 .departure-date-label,
 .adults-label {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
   grid-column: 1 / 2;
   align-self: center;
-  font-size: 18px;
-  font-weight: 700;
 }
 
 .arrival-date,
 .departure-date {
-  grid-column: 2 / 5;
+  grid-column: 2 / -1;
   font-family: inherit;
-  font-weight: 700;
   font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
   padding:0 19px;
-  appearance: none;
+  margin:0;
   border-radius: 4px;
   background-image: url(../images/calendar.svg);
   background-repeat: no-repeat;
-  background-position: right 25px center;
+  background-position: right 19px top 18px;
   border: none;
   border-radius: 4px;
   background-color:#F2F2F2;
@@ -768,40 +777,55 @@ padding: 0;
 .departure-date-info {
   grid-column: 2/-1;
   font-size: 16px;
+  /* не понял зачем в макете высота строки 40 пикслей */
+  line-height: 40px;
+  margin-top: -6px;
 }
 
-.adults {
-  grid-column: 2/3;
-  font-size: 18px;
-  font-weight: 700;
+.input-wrapper-adults {
+  grid-column: 2 / 3;
+  display: inline-flex;
+  position: relative;
+}
+
+.adults,
+.children {
   font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 40px;
+  width: 100%;
   padding-left: 61px;
-  padding-right: 50px;
+  padding-right: 45px;
   border: none;
   border-radius: 4px;
   background-color:#F2F2F2;
 }
 
 .adults::-webkit-outer-spin-button,
-.adults::-webkit-inner-spin-button {
+.adults::-webkit-inner-spin-button,
+.children::-webkit-outer-spin-button,
+.children::-webkit-inner-spin-button  {
   appearance: none;
 }
 
-.children-label {
-  grid-column: 3/4;
+.children-label-wrapper {
+  grid-column: 3 / 4;
   align-self: center;
-  font-size: 18px;
-  font-weight: 700;
-  margin-right: 10px;
+  position: relative;
 }
 
 .children-label {
-  /* переполнение при слишком длинном слове */
-  overflow-wrap: break-word;
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
+  margin-right: 11px;
+  margin-left:  36px;
 }
 
 .tooltip {
   position: absolute;
+  top: 9px;
 }
 
 .tooltip-toggle {
@@ -810,10 +834,10 @@ padding: 0;
   padding: 0;
   margin: 0;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
-}
+ }
 
 .tooltip-icon {
   width: 100%;
@@ -823,25 +847,22 @@ padding: 0;
 
 .tooltip-text {
   background-color: #333333;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
   color: #ffffff;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
   text-transform: none;
-  padding: 15px 18px 15px 22px;
+  padding: 19px 18px 24px 22px;
   border-radius: 10px;
   display: block;
-  width: 265px;
+  box-sizing: border-box;
+  width: 256px;
   position: absolute;
   top: 100%;
-  transform: translateX(-50%) translateX(10px);
+  transform: translateX(-50%) translateX(13px);
   margin-top: 15px;
   display: none;
-}
-
-.tooltip-toggle:hover + .tooltip-text,
-.tooltip-toggle:focus + .tooltip-text {
-  display: block;
 }
 
 .tooltip-text:before {
@@ -857,27 +878,60 @@ padding: 0;
   margin-right: auto;
 }
 
-.children {
-  grid-column: 4/5;
-  font-size: 18px;
-  font-weight: 700;
-  font-family: inherit;
-  padding-left: 61px;
-  padding-right: 50px;
-  border: none;
-  border-radius: 4px;
-  background-color:#F2F2F2;
+/* состояния тултип */
+.tooltip-toggle:hover {
+  background-color: #68A2CA;
 }
 
-.children::-webkit-outer-spin-button,
-.children::-webkit-inner-spin-button {
-  appearance: none;
+.tooltip-toggle:focus,
+.tooltip-toggle:focus-visible {
+  outline: none;
+  background-color: #68A2CA;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+.input-wrapper-children {
+  grid-column: 4 / -1;
+  display: inline-flex;
+  position: relative;
+}
+
+.icon-minus {
+  position: absolute;
+  display: inline-flex;
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0;
+  left: 19px;
+  top: 18px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.icon-plus {
+  position: absolute;
+  display: inline-flex;
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0;
+  right: 19px;
+  top: 18px;
+  color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
 }
 
 .modal-form .button {
-  padding:0;
-  grid-column: 1/-1;
-  grid-row: 7/8;
+  padding: 10px;
+  margin: 0;
+  width: 100%;
+  font-size: 20px;
+  line-height: 40px;
+  border-radius: 10px;
 }
 
 /* состояния модальное окно */
@@ -911,20 +965,44 @@ padding: 0;
   color: #FF5757;
 }
 
-/* состояние кнопка формы*/
-.modal-form button:hover {
+
+/* состояния кнопки числа людей */
+.icon-minus:hover,
+.icon-plus:hover {
+  color: #000000;
+}
+
+.icon-minus:focus,
+.icon-plus:focus {
+  color: #000000;
+  border-radius: 4px;
+  outline-offset: 3px;
+  outline: 3px solid #68A2CA;
+}
+
+.icon-minus:active,
+.icon-plus:active {
+  border: none;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/* состояние кнопка модальное окно*/
+.modal-form .button:hover {
   background-color: #68A2CA;
 }
 
-.modal-form button:focus-visible {
+.modal-form .button:focus-visible {
   outline: 3px solid #756257;
   outline-offset: 0;
 }
 
-.modal-form button:hover {
+.modal-form .button:hover {
   color:rgba(255, 255, 255, 0.3)
 }
 
+.modal-container-close {
+  display: none;
+}
 
 /* основные стили страница  каталога */
 .hotels-catalog {
@@ -1078,8 +1156,6 @@ padding: 0;
   border-radius: 4px;
   background-color: #ffffff;
 }
-
-
 
 /* состояния чекбоксы */
 .control-input:hover + .control-mark {
