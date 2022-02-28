@@ -1079,18 +1079,23 @@ padding: 0;
   background-color: #ffffff;
 }
 
+
+
 /* состояния чекбоксы */
 .control:hover .control-mark {
   opacity: 0.6;
 }
 
-/* у нашего элемента не может быть фокуса с клавиатуры, я не знаю что с этим делать,
-фокус попадает на скрытый input*/
-.control-mark:focus-visible,
-.control-mark:focus {
+.control-input:focus + .control-mark {
   opacity: 0.6;
   outline: 3px solid #83B3D3;
 }
+
+/* .control-mark:focus-visible,
+.control-mark:focus {
+  opacity: 0.6;
+  outline: 3px solid #83B3D3;
+} */
 
 .control:active .control-mark {
   opacity: 0.3;
