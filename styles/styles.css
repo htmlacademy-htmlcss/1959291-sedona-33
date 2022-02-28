@@ -535,6 +535,7 @@ padding: 0;
 }
 
 .subscribe-form .input:invalid {
+  outline: none;
   background-color: #ffffff;
   border: 3px solid #FF5757;
 }
@@ -555,9 +556,6 @@ padding: 0;
 .subscribe-form .button:focus-visible {
   outline: 3px solid #756257;
   outline-offset: 0;
-  /* судя по макету outline должен появляться вокруг кнопки и попадать на поле ввода,
-  чтобы линию слева было видно поднимаем кнопку вверх при фокусе */
-  z-index: 100;
 }
 
 .subscribe-form .button:active {
