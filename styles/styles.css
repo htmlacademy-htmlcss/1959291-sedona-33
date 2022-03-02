@@ -705,6 +705,7 @@ body {
 .modal-close-button:hover {
   background-color:#E5E5E5;
 }
+
 .modal-close-button:focus-visible {
   background-color:#E6E6E6;
   outline: 3px solid #83B3D3;
@@ -800,11 +801,17 @@ body {
   background-color:#F2F2F2;
 }
 
+/* убираем стрелочки */
 .adults::-webkit-outer-spin-button,
 .adults::-webkit-inner-spin-button,
 .children::-webkit-outer-spin-button,
 .children::-webkit-inner-spin-button  {
   appearance: none;
+}
+
+.adults,
+.children {
+  -moz-appearance: textfield;
 }
 
 .children-label-wrapper {
@@ -1207,10 +1214,14 @@ body {
   margin-bottom: 28px;
 }
 
+/* убираем стрелочки */
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
   appearance: none;
-  margin: 0;
+}
+
+.range-input{
+  -moz-appearance: textfield;
 }
 
 .range-input-min,
