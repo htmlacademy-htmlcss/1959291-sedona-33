@@ -1779,7 +1779,7 @@ body {
   padding-bottom: 2px;
 }
 
-/* аналогичная стрелочка как в фильтре отелей, отличается */
+/* аналогичная стрелочка как в фильтре отелей, положение отличается */
 .sorting-pagination .select-wrapper::after {
   top: 22px;
 }
@@ -1795,6 +1795,19 @@ body {
   border: 2px solid #e6e6e6;
   border-radius: 4px;
   appearance: none;
+  cursor: pointer;
+}
+
+/* состояния отелей на странице */
+.hotels-on-page-control:hover,
+.hotels-on-page-control:focus-visible{
+  border: 2px solid #83B3D3;
+  outline: none;
+}
+
+.hotels-on-page-control:active {
+  border: 2px solid #E6E6E6;
+  opacity: 0.3;
 }
 
 .subscribe-hotels {
