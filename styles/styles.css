@@ -27,10 +27,12 @@
 
 .button {
   display: inline-block;
+  box-sizing: border-box;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  word-wrap: break-word;
   text-align: center;
   color: #ffffff;
   text-decoration: none;
@@ -731,7 +733,6 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 135px 133px 114px 133px;
-  /* grid-template-rows: auto auto; */
   column-gap: 20px;
 }
 
@@ -757,7 +758,7 @@ body {
   padding:0 19px;
   margin:0;
   border-radius: 4px;
-  background-image: url(../images/calendar.svg);
+  background-image: url("../images/calendar.svg");
   background-repeat: no-repeat;
   background-position: right 19px center;
   border: none;
@@ -871,7 +872,7 @@ body {
 
 .tooltip-text:before {
   content: "";
-  background-image: url(../images/tooltip-arrow.svg);
+  background-image: url("../images/tooltip-arrow.svg");
   width: 19px;
   height: 9px;
   position:absolute;
@@ -1606,8 +1607,8 @@ body {
 /* состояния кнопок карточки отеля синяя кнопка*/
 .hotel-card-information .button-light-blue:hover {
   background-color: #68A2CA;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
 }
 
 .hotel-card-information .button-light-blue:focus-visible {
@@ -1618,16 +1619,16 @@ body {
 
 .hotel-card-information .button-light-blue:active {
   background-color: #68A2CA;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
   color: rgb(255, 255, 255, 0.3)
 }
 
 /* состояния кнопок карточки отеля зеленая кнопка*/
 .hotel-card-information .button-green:hover {
   background-color: #6C9E42;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
 }
 
 .hotel-card-information .button-green:focus-visible {
@@ -1638,8 +1639,8 @@ body {
 
 .hotel-card-information .button-green:active {
   background-color: #6C9E42;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
   color: rgb(255, 255, 255, 0.3)
 }
 
