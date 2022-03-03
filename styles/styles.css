@@ -27,10 +27,12 @@
 
 .button {
   display: inline-block;
+  box-sizing: border-box;
   font-family: inherit;
   font-size: 16px;
   line-height: 20px;
   font-weight: 700;
+  word-wrap: break-word;
   text-align: center;
   color: #ffffff;
   text-decoration: none;
@@ -290,8 +292,8 @@ body {
 .advantages-description,
 .advantages-facts-title,
 .advantages-facts-description {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .advantages-item-info,
@@ -523,7 +525,6 @@ padding: 0;
 }
 
 /* состояния поле ввода данных */
-
 .subscribe-form .input:hover {
   background-color: #E6E6E6
 }
@@ -563,7 +564,6 @@ padding: 0;
 }
 
 /* Футер */
-
 .page-footer {
   display: flex;
   align-items: center;
@@ -705,6 +705,7 @@ padding: 0;
 .modal-close-button:hover {
   background-color:#E5E5E5;
 }
+
 .modal-close-button:focus-visible {
   background-color:#E6E6E6;
   outline: 3px solid #83B3D3;
@@ -733,7 +734,6 @@ padding: 0;
   margin: 0;
   display: grid;
   grid-template-columns: 135px 133px 114px 133px;
-  /* grid-template-rows: auto auto; */
   column-gap: 20px;
 }
 
@@ -759,7 +759,7 @@ padding: 0;
   padding:0 19px;
   margin:0;
   border-radius: 4px;
-  background-image: url(../images/calendar.svg);
+  background-image: url("../images/calendar.svg");
   background-repeat: no-repeat;
   background-position: right 19px center;
   border: none;
@@ -801,11 +801,17 @@ padding: 0;
   background-color:#F2F2F2;
 }
 
+/* убираем стрелочки */
 .adults::-webkit-outer-spin-button,
 .adults::-webkit-inner-spin-button,
 .children::-webkit-outer-spin-button,
 .children::-webkit-inner-spin-button  {
   appearance: none;
+}
+
+.adults,
+.children {
+  -moz-appearance: textfield;
 }
 
 .children-label-wrapper {
@@ -873,7 +879,7 @@ padding: 0;
 
 .tooltip-text:before {
   content: "";
-  background-image: url(../images/tooltip-arrow.svg);
+  background-image: url("../images/tooltip-arrow.svg");
   width: 19px;
   height: 9px;
   position:absolute;
@@ -1208,10 +1214,14 @@ padding: 0;
   margin-bottom: 28px;
 }
 
+/* убираем стрелочки */
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
   appearance: none;
-  margin: 0;
+}
+
+.range-input{
+  -moz-appearance: textfield;
 }
 
 .range-input-min,
@@ -1608,8 +1618,8 @@ padding: 0;
 /* состояния кнопок карточки отеля синяя кнопка*/
 .hotel-card-information .button-light-blue:hover {
   background-color: #68A2CA;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
 }
 
 .hotel-card-information .button-light-blue:focus-visible {
@@ -1620,16 +1630,16 @@ padding: 0;
 
 .hotel-card-information .button-light-blue:active {
   background-color: #68A2CA;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
   color: rgb(255, 255, 255, 0.3)
 }
 
 /* состояния кнопок карточки отеля зеленая кнопка*/
 .hotel-card-information .button-green:hover {
   background-color: #6C9E42;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
 }
 
 .hotel-card-information .button-green:focus-visible {
@@ -1640,8 +1650,8 @@ padding: 0;
 
 .hotel-card-information .button-green:active {
   background-color: #6C9E42;
-  border: 1px solid #756257;
-  padding: 7px 0;
+  outline: 1px solid #756257;
+  outline-offset: -1px;
   color: rgb(255, 255, 255, 0.3)
 }
 
@@ -1780,7 +1790,7 @@ padding: 0;
   padding-bottom: 2px;
 }
 
-/* аналогичная стрелочка как в фильтре отелей, отличается */
+/* аналогичная стрелочка как в фильтре отелей, положение отличается */
 .sorting-pagination .select-wrapper::after {
   top: 22px;
 }
@@ -1796,6 +1806,19 @@ padding: 0;
   border: 2px solid #e6e6e6;
   border-radius: 4px;
   appearance: none;
+  cursor: pointer;
+}
+
+/* состояния отелей на странице */
+.hotels-on-page-control:hover,
+.hotels-on-page-control:focus-visible{
+  border: 2px solid #83B3D3;
+  outline: none;
+}
+
+.hotels-on-page-control:active {
+  border: 2px solid #E6E6E6;
+  opacity: 0.3;
 }
 
 .subscribe-hotels {

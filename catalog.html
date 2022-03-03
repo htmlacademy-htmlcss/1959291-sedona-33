@@ -69,7 +69,6 @@
                 <li class="catalog-filter-item">
                   <label class="control">
                     <input class="visually-hidden control-input" type="checkbox" name="pool" checked>
-                    <!-- tabindex="0" -->
                     <span class="control-mark"></span>
                     <span class="control-label">Бассейн</span>
                   </label>
@@ -153,7 +152,8 @@
         <section class="catalog-hotel-search">
           <h2 class="visually-hidden">Список гостиниц с фильтрами.</h2>
           <section class="sorting">
-            <h2 class="sorting-results-heading">Найдено гостиниц: 38</h2>
+            <!-- class="number-of-hotels" в стилях не используется, нужен на будущее для изменения числа гостиниц -->
+            <h2 class="sorting-results-heading">Найдено гостиниц: <span class="number-of-hotels">38</span></h2>
             <div class="select-wrapper">
               <select class="sorting-control" aria-label="Сортировка">
                 <option value="cheap">Сначала дешёвые</option>
@@ -180,7 +180,7 @@
                 <a class="hotel-card-image-link" href="#">
                   <img class="hotel-card-image" src="images/hotel-1.jpg" width="300" height="206" alt="Гостиница Amara Resort & Spa.">
                 </a>
-                <!-- добавил tabIndex="-1" чтобы Tab не фокусировался на ссылках, достаточно ли фокуса только на картинке? -->
+                <!-- добавил tabIndex="-1" чтобы Tab не фокусировался на ссылках -->
                 <a class="hotel-card-title-link" tabIndex="-1" href="#">
                   <h3 class="hotel-card-title">Amara Resort & Spa</h3>
                 </a>

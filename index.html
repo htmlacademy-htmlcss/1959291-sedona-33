@@ -173,7 +173,7 @@
           </a>
         </div>
       </footer>
-      <!-- modal-container-close -->
+      <!-- modal-container-close класс для скрытия контейнера-->
       <div class="modal-container modal-container-close">
         <div class="modal">
           <button class="modal-close-button">
@@ -187,12 +187,13 @@
             <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
               <p class="field-group">
                 <label class="arrival-date-label" for="arrival-date">Дата заезда:</label>
-                <input class="arrival-date" id="arrival-date" class="input" type="date" name="arrival-date" value="2020-04-27" placeholder="Укажите дату">
+                <!-- required убирает кнопку сброса даты в мозила -->
+                <input class="arrival-date" id="arrival-date" class="input" type="date" name="arrival-date" value="2020-04-27" required>
                 <span class="arrival-date-info message-error">Мы не можем отправить вас в прошлое.</span>
               </p>
               <p class="field-group">
                 <label class="departure-date-label" for="departure-date">Дата выезда:</label>
-                <input class="departure-date" id="departure-date" class="input" type="date" name="departure-date" value="2021-09-01">
+                <input class="departure-date" id="departure-date" class="input" type="date" name="departure-date" value="2021-09-01" required>
                 <span class="departure-date-info">На эти даты есть свободные номера. Пока есть.</span>
               </p>
               <p class="field-group">
@@ -226,17 +227,7 @@
 </html>
 
 <!-- Вопросы:
-1. Состояние Fucus - при клике получаем outline вокруг кнопки, focus-visible -все работает.
-Правильно ли все фокусы делать focus-visible?
-2. Область кнопок главного меню (главная о седоне гостинцы) - судя по коричневой полоске кнопка
-идет с маргинами, чтобы был зазор до соседней кнопки, или можно задать паддинги чтобы кнопки были
-впритык друг к другу, но тогда как задать полоску внизу, чтобы она была разером только с текст?
-3.Поле ввода данных .subscribe-form .input состояние ошибка - по идее форма то остается в фокусе
-и к ней применяется два состояния, или в момент ошибки состояние фокуса нужно отменить стилями,
-чтобы было как в макете
-4. Карточка отеля добавил tabIndex="-1" чтобы Tab не фокусировался на ссылках, достаточно ли фокуса только на картинке?
-<a class="hotel-card-title-link" tabIndex="-1" href="#">
-5. Формат даты в модальном окне - 27 апреля 2020 - зависит от параметров системы,
+1. Формат даты в модальном окне - 27 апреля 2020 - зависит от параметров системы,
 или его возможно задать чтобы он был как в макете а не 27.04.2020 ?
 
 -->
