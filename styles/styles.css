@@ -14,6 +14,28 @@
   font-display: swap;
 }
 
+html {
+  background-color:#f2f2f2;
+  height: 100%;
+  min-width: 1280px;
+  padding: 0 40px;
+}
+
+body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 1200px;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -54,25 +76,13 @@
   background-color: #7DB54F;
 }
 
-html {
-  background-color:#f2f2f2;
-  height: 100%;
-  padding: 0 20px;
+.button-disabled {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
 }
 
-body {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  width: 1200px;
-  font-family: "PT Sans", sans-serif;
-  font-size: 18px;
-  line-height: 21px;
-  font-weight: 400;
-  color: #000000;
-  background-color: #ffffff;
-}
+
+
 
 .page-header {
   margin: 0;
@@ -143,6 +153,9 @@ body {
   padding-bottom: 20px;
   margin-top: 2px;
   margin-bottom: 3px;
+  /* добавим два пикселя для элемента с кружком, на макете кружок выходит за элемент,
+  и обрезается при переполнении, добавим под него пространства */
+  margin-right: 2px;
 }
 
 .navigation-icon {
@@ -174,13 +187,17 @@ body {
   color: #ffffff;
   font-size: 10px;
   line-height: 13px;
-
 }
 
 .navigation-item .button{
-  margin-left: 20px;
+  /* тут на два пикселя меньше чем в макете, они переехали в  .navigation-user .navigation-link*/
+  margin-left: 18px;
+  /* при переполнении кнопками они не слиипаются */
+  margin-bottom: 5px;
+  margin-top: 5px;
   padding: 9px 34px 8px;
   border-radius: 4px;
+  max-width: 160px;
 }
 
 /* состояния главное меню */
@@ -267,6 +284,7 @@ body {
   padding: 0;
   font-size: 22px;
   line-height: 36px;
+  color: #333333;
 }
 
 .advantages-list,
@@ -360,9 +378,12 @@ body {
   text-transform: uppercase;
 }
 
-.advantages-title,
+.advantages-title {
+margin-bottom: 29px;
+}
+
 .advantages-number {
-  margin-bottom: 29px;
+  margin-bottom: 30px;
 }
 
 .advantages-facts-item .advantages-facts-title {
@@ -386,8 +407,8 @@ body {
 
 /* по правильному нужно задать такие паддиниг для блока advantages-facts-description,
 чтобы текс форматировался как в макете, но у него разное форматирование в разных блоках,
-в 3 блоке например, "но" можно перенести только <br> поэтому я их добавил во все блоки.
-Будем считать это проблемой дизайнера, и отформатируем текст в верстке.
+в 3 блоке например, "но" можно перенести только <br> поэтому я их добавил во все блоки
+Форматируем текст в верстке.
 */
 
 .advantages-item-info {
@@ -454,6 +475,7 @@ body {
   margin-bottom: 54px;
   font-size: 22px;
   line-height: 26px;
+  color: #333333;
 }
 
 .hotel-search-link {
@@ -465,6 +487,8 @@ body {
   line-height: 36px;
   border-radius: 10px;
   padding: 15px 15px 9px;
+  /* отступ при переполнении кнопками, для одной кнопки схлопывается и не мешает */
+  margin-top: 5px;
 }
 
 /* состояния кнопки */
@@ -511,6 +535,8 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  /* отступ при переполнении формами, для одной схлопывается и не мешает */
+  margin-top: 5px;
 }
 
 .subscribe-form .input {
@@ -541,6 +567,11 @@ body {
   border: 3px solid #FF5757;
 }
 
+.subscribe-form .input:disabled {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
+}
+
 .subscribe-form .button {
   font-size: 20px;
   line-height: 26px;
@@ -561,6 +592,13 @@ body {
 
 .subscribe-form .button:active {
  color: rgba(255, 255, 255, 0.3)
+}
+
+.subscribe-form .button-disabled:hover,
+.subscribe-form .button-disabled:focus-visible {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
+  cursor: auto;
 }
 
 /* Футер */
@@ -584,7 +622,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  /* для  границы первой кнопки пр фокусировании*/
+  /* для  границы первой кнопки при фокусировании*/
   margin-left: -10px;
 }
 
@@ -592,10 +630,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 3px;
+  /* картинки не по центру кнопок */
+  transform: translateY(-2px);
   width: 40px;
   height: 40px;
   box-sizing: border-box;
+  margin-right: 3px;
 }
 
 .footer-social-link:nth-child(3n) {
@@ -627,6 +667,9 @@ body {
   font-size: 40px;
   line-height: 40px;
   text-decoration: none;
+  max-width: 720px;
+  /* телефон смещен по макету */
+transform: translateX(-2px);
 }
 
 /* состояния телефон и логотип */
@@ -972,11 +1015,20 @@ body {
   outline-offset: -2px;;
 }
 
+.arrival-date:disabled,
+.departure-date:disabled,
+.adults:disabled,
+.children:disabled {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
+  outline: none;
+}
+
+
 /* состояние сообщение об ошибке */
 .message-error {
   color: #FF5757;
 }
-
 
 /* состояния кнопки числа людей */
 .icon-minus:hover,
@@ -1041,6 +1093,7 @@ body {
   margin: 0;
   padding:0;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 42px;
   margin-left: 2px;
 }
@@ -1183,6 +1236,15 @@ body {
   opacity: 0.3;
 }
 
+.control-input:disabled + .control-mark,
+.control-input:disabled:hover + .control-mark,
+.control-input:disabled:focus + .control-mark {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
+  opacity: 1;
+  outline: none;
+}
+
 .control-input[type="checkbox"]:checked + .control-mark::before {
   position: absolute;
   width: 20px;
@@ -1254,7 +1316,6 @@ body {
 }
 
 /* у инпут нельзя сделать псевдоэлемент, пришлось добавить обертку и спан в верстку */
-
 .info-text-min,
 .info-text-max {
   position: absolute;
@@ -1264,6 +1325,8 @@ body {
   top: 12px;
   color: #FFFFFF;
   opacity: 0.3;
+  max-width: 25px;
+  word-wrap: break-word;
 }
 
 /* оторвать руки тому кто нарисовал разные отступы в этих элементах */
@@ -1285,6 +1348,14 @@ body {
 .range-input:active {
   background-color: #756257;
 }
+
+.range-input:disabled {
+  background-color: #aaaaaa;
+  border-color: #aaaaaa;
+  opacity: 1;
+  outline: none;
+}
+
 
 .range-scale {
   position: relative;
@@ -1337,12 +1408,12 @@ body {
 
 .catalog-filter-group:nth-child(2) {
   max-width: 160px;
-  margin-right: 168px;
+  margin-right: auto;
 }
 
 .catalog-filter-group:nth-child(3) {
   max-width: 288px;
-  margin-right: 81px;
+  margin-right: 80px;
 }
 
 .catalog-filter-buttons {
@@ -1397,23 +1468,26 @@ body {
 /* Результаты поиска */
 
 .catalog-hotel-search {
-  padding: 44px 72px 0px;
+  padding: 42px 72px 0px;
 }
 
 .sorting {
   display: flex;
-  margin-bottom: 53px;
+  margin-bottom: 51px;
 }
 
 .sorting-results-heading {
   margin: 0;
   margin-left: -1px;
-  padding: 4px 0 6px;
+  margin-top: 8px;
   font-family: inherit;
   font-size: 30px;
   line-height: 38px;
   text-transform: uppercase;
   margin-right:auto;
+  min-width: 300px;
+  max-width: 500px;
+
 }
 
 .select-wrapper {
@@ -1438,7 +1512,8 @@ body {
 .select-wrapper::after {
   display: block;
   position: absolute;
-  top: 20px;
+  top: 50%;
+  transform: translateY(-5px);
   right: 17px;
   width: 20px;
   height: 10px;
@@ -1463,6 +1538,7 @@ body {
 
 .sorting-buttons-group {
   display: flex;
+  flex-wrap: wrap;
   margin-left: 81px;
 }
 
@@ -1474,6 +1550,8 @@ body {
   margin-right: 8px;
   background-color:#ffffff;
   background-repeat: no-repeat;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .sorting-buttons-group .button:last-child {
@@ -1533,7 +1611,7 @@ body {
   grid-template-columns: repeat(3, 340px);
   column-gap: 18px;
   row-gap: 10px;
-  margin-bottom: 33px;
+  margin-bottom: 34px;
 }
 
 .hotel-card {
@@ -1695,15 +1773,16 @@ body {
   line-height: 21px;
   text-transform: uppercase;
   padding: 8px 32px;
+  max-width: 160px;
 }
 
 .load-more{
-  padding: 30px 218px;
+  padding: 29px 218px 30px;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 27px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 29px;
 }
 
 .load-more .button{
@@ -1737,20 +1816,24 @@ body {
   margin: 0;
   padding:0;
   display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
 }
 
-.pagination-item {
+.pagination-item:not(:last-child) {
   margin-right: 8px;
 }
 
-.pagination-item:last-child {
-  margin-right: 0;
+/* для переполнения, при этом убрал по два пикселя отступа у соседних блоков для сохранения размеров */
+.pagination-item {
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 
 .pagination-link {
   display: flex;
-  width: 55px;
-  height: 55px;
+  min-width: 55px;
+  min-height: 55px;
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
@@ -1761,7 +1844,6 @@ body {
 }
 
 /* состояния пагинация  */
-
 .pagination-link:hover {
   background-color: #68A2CA;
 }
@@ -1790,10 +1872,6 @@ body {
   padding-bottom: 2px;
 }
 
-/* аналогичная стрелочка как в фильтре отелей, положение отличается */
-.sorting-pagination .select-wrapper::after {
-  top: 22px;
-}
 
 .hotels-on-page-control {
   font: inherit;
@@ -1825,7 +1903,7 @@ body {
   color: #000000;
   background-color: #ffffff;
   text-align: center;
-  padding: 73px 200px 141px;
+  padding: 71px 200px 141px;
 }
 
 .subscribe-hotels .subscribe-title {
