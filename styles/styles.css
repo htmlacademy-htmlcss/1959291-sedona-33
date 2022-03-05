@@ -459,7 +459,7 @@ img {
 }
 
 .hotel-search {
-  padding: 91px 303px 93px;
+  padding: 90px 303px 93px;
 }
 
 .hotel-search-title {
@@ -478,7 +478,7 @@ img {
 .hotel-search-instruction {
   padding: 0;
   margin: 0;
-  margin-bottom: 54px;
+  margin-bottom: 55px;
   font-size: 22px;
   line-height: 26px;
   color: #333333;
@@ -554,6 +554,7 @@ img {
   box-sizing: border-box;
   border-radius: 10px 0 0 10px;
   border: none;
+  background-color: #f2f2f2;
 }
 
 /* состояния поле ввода данных */
@@ -715,7 +716,7 @@ img {
   position: relative;
   margin: auto;
   padding: 70px;
-  padding-top: 62px;
+  padding-top: 60px;
   background-color: #ffffff;
   border-radius: 30px;
   z-index: 2;
@@ -764,7 +765,7 @@ img {
 .modal-title {
   padding: 0;
   margin: 0;
-  margin-bottom: 59px;
+  margin-bottom: 61px;
   /* смещение от всей формы влево */
   margin-left: -2px;
   font-weight: 700;
@@ -820,7 +821,7 @@ img {
   grid-column: 2/-1;
   font-size: 16px;
   line-height: 40px;
-  transform: translateY(-6px);
+  transform: translateY(-7px);
 }
 
 .input-wrapper-adults {
@@ -844,7 +845,7 @@ img {
   background-color: #f2f2f2;
   /* убираем стрелочки firefox*/
   -webkit-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
 }
 
 /* убираем стрелочки chrome*/
@@ -853,7 +854,7 @@ img {
 .children::-webkit-outer-spin-button,
 .children::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .children-label-wrapper {
@@ -923,8 +924,8 @@ img {
   width: 19px;
   height: 9px;
   position: absolute;
-  top: -8px;
-  left: 0;
+  top: -9px;
+  left: -1px;
   right: 0;
   margin: 0 auto;
 }
@@ -1280,7 +1281,7 @@ img {
 .range-input::-webkit-outer-spin-button,
 .range-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .range-input {
@@ -1293,7 +1294,7 @@ img {
   font-size: 18px;
   line-height: 23px;
   -webkit-appearance: textfield;
-          appearance: textfield;
+  appearance: textfield;
 }
 
 .range-input-min,
@@ -1503,7 +1504,7 @@ img {
   font-size: 18px;
   line-height: 24px;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   cursor: pointer;
 }
 
@@ -1892,7 +1893,7 @@ img {
   border: 2px solid #e6e6e6;
   border-radius: 4px;
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   cursor: pointer;
 }
 
