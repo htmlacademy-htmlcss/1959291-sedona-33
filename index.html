@@ -174,7 +174,7 @@
         </div>
       </footer>
       <!-- modal-container-close класс для скрытия контейнера-->
-      <div class="modal-container">
+      <div class="modal-container modal-container-close">
         <div class="modal">
           <button class="modal-close-button" type="button">
             <span class="visually-hidden">Закрыть.</span>
@@ -187,13 +187,30 @@
             <form class="modal-form" action="https://echo.htmlacademy.ru/" method="post">
               <p class="field-group">
                 <label class="arrival-date-label" for="arrival-date">Дата заезда:</label>
-                <!-- required убирает кнопку сброса даты в мозила -->
-                <input class="arrival-date" id="arrival-date" type="date" name="arrival-date" value="2020-04-27" required>
+                <span class="date-input-wrapper">
+                  <input class="arrival-date" id="arrival-date" type="text" name="arrival-date" value="27 апреля 2020">
+                  <button class="date-button" type="button">
+                    <svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.5 10c.3 0 .5-.2.5-.5S5.8 9 5.5 9s-.5.2-.5.5.2.5.5.5Z"/>
+                      <path d="M14 2h-2V0h-1v2H4V0H3v2H1c-.6 0-1 .4-1 1v11c0 .5.4 1 1 1h13c.5 0 1-.5 1-1V3c0-.6-.5-1-1-1Zm0 12H1V7h13v7ZM1 6V3h2v2h1V3h7v2h1V3h2v3H1Z"/>
+                      <path d="M7.5 10c.3 0 .5-.2.5-.5S7.8 9 7.5 9s-.5.2-.5.5.2.5.5.5ZM9.5 10c.3 0 .5-.2.5-.5S9.8 9 9.5 9s-.5.2-.5.5.2.5.5.5ZM5.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM3.5 10c.3 0 .5-.2.5-.5S3.8 9 3.5 9s-.5.2-.5.5.2.5.5.5ZM3.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM7.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM9.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM11.5 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5ZM11.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5Z"/>
+                    </svg>
+                  </button>
+                </span>
                 <span class="arrival-date-info message-error">Мы не можем отправить вас в прошлое.</span>
               </p>
               <p class="field-group">
                 <label class="departure-date-label" for="departure-date">Дата выезда:</label>
-                <input class="departure-date" id="departure-date" type="date" name="departure-date" value="2021-09-01" required>
+                <span class="date-input-wrapper">
+                  <input class="departure-date" id="departure-date" type="text" name="departure-date" value="1 сентября 2021">
+                  <button class="date-button" type="button">
+                    <svg aria-hidden="true" focusable="false" width="15" height="15" viewBox="0 0 15 15" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.5 10c.3 0 .5-.2.5-.5S5.8 9 5.5 9s-.5.2-.5.5.2.5.5.5Z"/>
+                      <path d="M14 2h-2V0h-1v2H4V0H3v2H1c-.6 0-1 .4-1 1v11c0 .5.4 1 1 1h13c.5 0 1-.5 1-1V3c0-.6-.5-1-1-1Zm0 12H1V7h13v7ZM1 6V3h2v2h1V3h7v2h1V3h2v3H1Z"/>
+                      <path d="M7.5 10c.3 0 .5-.2.5-.5S7.8 9 7.5 9s-.5.2-.5.5.2.5.5.5ZM9.5 10c.3 0 .5-.2.5-.5S9.8 9 9.5 9s-.5.2-.5.5.2.5.5.5ZM5.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM3.5 10c.3 0 .5-.2.5-.5S3.8 9 3.5 9s-.5.2-.5.5.2.5.5.5ZM3.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM7.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM9.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5ZM11.5 10c.3 0 .5-.2.5-.5s-.2-.5-.5-.5-.5.2-.5.5.2.5.5.5ZM11.5 11c-.3 0-.5.2-.5.5s.2.5.5.5.5-.2.5-.5-.2-.5-.5-.5Z"/>
+                    </svg>
+                  </button>
+                </span>
                 <span class="departure-date-info">На эти даты есть свободные номера. Пока есть.</span>
               </p>
               <p class="field-group">

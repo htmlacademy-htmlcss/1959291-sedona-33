@@ -787,26 +787,51 @@ img {
   word-wrap: break-word;
 }
 
+.date-input-wrapper {
+  grid-column: 2 / 5;
+  display: flex;
+  position: relative;
+}
+
 .arrival-date,
 .departure-date {
-  grid-column: 2 / -1;
+  width: 100%;
   font-family: inherit;
   font-size: 18px;
   line-height: 40px;
   font-weight: 700;
   padding: 0 19px;
   margin: 0;
-  background-image: url("../images/calendar.svg");
-  background-repeat: no-repeat;
-  background-position: right 19px center;
   border: none;
   border-radius: 4px;
   background-color: #f2f2f2;
 }
 
-.arrival-date::-webkit-calendar-picker-indicator,
-.departure-date::-webkit-calendar-picker-indicator {
-  opacity: 0;
+.date-button {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 19px;
+  top: 50%;
+  transform: translateY(-7.5px);
+  border: none;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+  background: none;
+}
+
+/* состояния кнопка выбора даты */
+.date-button:focus-visible {
+  border-radius: 4px;
+  outline-offset: 3px;
+  outline: 3px solid #68a2ca;
+}
+
+.date-button:active {
+  border: none;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .arrival-date-info,
@@ -1040,7 +1065,7 @@ img {
   color: rgba(0, 0, 0, 0.2);
 }
 
-/* состояние кнопка модальное окно*/
+/* состояние общая кнопка модальное окно*/
 .modal-form .button:hover {
   background-color: #68a2ca;
   color: rgba(255, 255, 255, 0.3);
