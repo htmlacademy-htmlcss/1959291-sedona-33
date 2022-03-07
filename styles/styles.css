@@ -1914,7 +1914,7 @@ img {
   cursor: pointer;
 }
 
-/* состояния отелей на странице  */
+/*состояния отелей на странице*/
 .hotels-on-page-control:hover,
 .hotels-on-page-control:focus-visible {
   border: 2px solid #83b3d3;
