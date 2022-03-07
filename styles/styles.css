@@ -127,7 +127,7 @@ img {
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
-  margin: 2px 2px 0px;
+  margin: 2px 2px 0;
 }
 
 .navigation-user {
@@ -1914,7 +1914,7 @@ img {
   cursor: pointer;
 }
 
-/* состояния отелей на странице */
+/*состояния отелей на странице*/
 .hotels-on-page-control:hover,
 .hotels-on-page-control:focus-visible {
   border: 2px solid #83b3d3;
