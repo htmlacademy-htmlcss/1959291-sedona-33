@@ -121,18 +121,14 @@ img {
 .navigation-link {
   position: relative;
   display: block;
-  padding: 0;
+  padding: 17px 15px 18px;
   color: #000000;
   background-color: #ffffff;
   text-decoration: none;
   font-size: 20px;
   line-height: 26px;
   font-weight: 700;
-  padding-top: 17px;
-  padding-bottom: 18px;
-  margin: 0 17px;
-  /* этот отступ нужен для границы, которая появляется при фокусировке на кнопку */
-  margin-top: 2px;
+  margin: 2px 2px 0;
 }
 
 .navigation-user {
@@ -201,9 +197,13 @@ img {
 }
 
 /* состояния главное меню */
-.navigation-item .current {
-  border-bottom: 2px solid #756257;
-  margin-bottom: -1px;
+.navigation-item .current::after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #756257;
+  transform: translateY(19px);
 }
 
 .navigation-link:hover {
@@ -1915,7 +1915,7 @@ img {
   cursor: pointer;
 }
 
-/* состояния отелей на странице */
+/*состояния отелей на странице*/
 .hotels-on-page-control:hover,
 .hotels-on-page-control:focus-visible {
   border: 2px solid #83b3d3;
