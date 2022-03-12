@@ -404,12 +404,6 @@ img {
   line-height: 21px;
 }
 
-/* по правильному нужно задать такие паддиниг для блока advantages-facts-description,
-чтобы текс форматировался как в макете, но у него разное форматирование в разных блоках,
-в 3 блоке например, "но" можно перенести только <br> поэтому я их добавил во все блоки
-Форматируем текст в верстке.
-*/
-
 .advantages-item-info {
   padding-left: 90px;
   padding-right: 90px;
@@ -506,9 +500,10 @@ img {
 
 .subscribe {
   color: #ffffff;
-  background-color: #000000;
+  background-color: #3a698d;
   background-image: url("../images/subscribe-background.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   padding: 94px 200px 94px;
 }
 
@@ -609,7 +604,6 @@ img {
 }
 
 /* для переполнения блока */
-
 .footer-social {
   max-width: 130px;
 }
@@ -643,7 +637,6 @@ img {
 }
 
 /* состояния соц сети */
-
 .footer-social-link:hover {
   color: #68a2ca;
 }
@@ -1089,9 +1082,10 @@ img {
 /* основные стили страница  каталога */
 .hotels-catalog {
   color: #ffffff;
-  background-color: #000000;
+  background-color: #435a6a;
   background-image: url("../images/catalog-background.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   padding: 35px 72px 81px 72px;
 }
 
@@ -1325,7 +1319,6 @@ img {
 }
 
 .range-wrapper-inputs .max {
-  /* у правого поля ввода другой паддинг и размер, странно конечно*/
   width: 143px;
   padding-left: 15px;
   border-radius: 0 4px 4px 0;
@@ -1345,7 +1338,6 @@ img {
   word-wrap: break-word;
 }
 
-/* оторвать руки тому кто нарисовал разные отступы в этих элементах */
 .label-max {
   right: 17px;
 }
@@ -1482,7 +1474,6 @@ img {
 }
 
 /* Результаты поиска */
-
 .catalog-hotel-search {
   padding: 42px 72px 0;
 }
